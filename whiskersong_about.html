@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About | WhiskerSong Mobile Rabbit & Small Animal Veterinarian</title>
+<meta name="description" content="Learn about WhiskerSong, a mobile veterinary practice dedicated to rabbits, guinea pigs, chinchillas, and other small companions across Greater Vancouver, BC.">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500&family=Cormorant+Garamond:ital,wght@0,500;1,500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --sage: #18b8ac;
+    --sage-light: #3ed4c8;
+    --sage-dark: #0a9088;
+    --cream: #e4f2f0;
+    --warm-white: #eef8f6;
+    --sand: #cce8e4;
+    --terra: #d96e14;
+    --terra-light: #eda04a;
+    --charcoal: #162624;
+    --mid: #3d7570;
+    --light-text: #6aadaa;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--warm-white);
+    color: var(--charcoal);
+    overflow-x: hidden;
+  }
+
+  /* ── WOODSY TEXTURE OVERLAY ── */
+  body::before {
+    content: '';
+    position: fixed; inset: 0; z-index: 0; pointer-events: none;
+    background-image:
+      radial-gradient(ellipse at 15% 20%, rgba(101,72,28,0.06) 0%, transparent 45%),
+      radial-gradient(ellipse at 85% 10%, rgba(10,144,136,0.07) 0%, transparent 40%),
+      radial-gradient(ellipse at 70% 85%, rgba(101,72,28,0.07) 0%, transparent 45%),
+      radial-gradient(ellipse at 5% 90%,  rgba(10,144,136,0.05) 0%, transparent 40%);
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    flex-wrap: wrap; gap: 1rem;
+    padding: 1.4rem 3.5rem;
+    background: rgba(235,125,50,1.0);
+    backdrop-filter: blur(14px);
+    border-bottom: 1px solid rgba(255,255,255,0.12);
+    border-radius: 0 0 1.4rem 1.4rem;
+  }
+  .nav-logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.15rem; color: var(--sage-dark); letter-spacing: 0.02em;
+  }
+  .nav-logo span { color: var(--terra); font-style: italic; }
+  .nav-links { display: flex; gap: 2.4rem; list-style: none; flex-wrap: wrap; margin-right: 2rem; }
+  .nav-links a {
+    text-decoration: none; font-size: 1.35rem; font-weight: 700;
+    font-family: 'Cormorant Garamond', serif; font-style: italic;
+    color: white; letter-spacing: 0.04em;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover,
+  .nav-links a.active { color: rgba(255,255,255,0.7); }
+  .nav-cta {
+    background: #0a9088; color: white;
+    border: none; padding: 0.65rem 1.5rem; border-radius: 2rem;
+    font-size: 0.95rem; font-weight: 500; letter-spacing: 0.05em;
+    text-transform: uppercase; cursor: pointer; transition: background 0.2s;
+  }
+  .nav-cta:hover { background: #076058; }
+
+  /* ── UNIFIED VET SECTION ── */
+  .vet-section {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr minmax(0, 780px) 1fr;
+    min-height: calc(100vh - 80px);
+    padding-top: 80px; /* nav height */
+  }
+
+  /* teal/orange side columns */
+  .vet-col-side {
+    background:
+      radial-gradient(ellipse at 80% 90%, rgba(217,110,20,0.22) 0%, transparent 55%),
+      radial-gradient(ellipse at 10% 20%, rgba(10,144,136,0.15) 0%, transparent 50%),
+      #c4e2d8;
+    position: relative;
+    overflow: hidden;
+  }
+  .vet-col-side.right {
+    background:
+      radial-gradient(ellipse at 20% 80%, rgba(217,110,20,0.20) 0%, transparent 55%),
+      radial-gradient(ellipse at 85% 15%, rgba(10,144,136,0.14) 0%, transparent 50%),
+      #c4e2d8;
+  }
+
+  /* decorative circles in side columns */
+  .side-deco {
+    position: absolute; border-radius: 50%;
+    border: 1px solid rgba(10,144,136,0.20);
+    pointer-events: none;
+  }
+  .vet-col-side.left .side-deco.d1 { width: 260px; height: 260px; top: 8%; left: -80px; }
+  .vet-col-side.left .side-deco.d2 { width: 140px; height: 140px; bottom: 18%; left: 30%; border-color: rgba(217,110,20,0.18); }
+  .vet-col-side.right .side-deco.d1 { width: 300px; height: 300px; bottom: 5%; right: -90px; }
+  .vet-col-side.right .side-deco.d2 { width: 120px; height: 120px; top: 22%; right: 25%; border-color: rgba(217,110,20,0.18); }
+
+  /* white centred card */
+  .vet-card-center {
+    background: white;
+    box-shadow: 0 0 60px rgba(22,38,36,0.10);
+    display: flex; flex-direction: column; align-items: center;
+    padding: 5rem 4rem 5rem;
+    z-index: 2;
+    position: relative;
+  }
+
+  /* avatar */
+  .vet-avatar {
+    width: 160px; height: 160px; border-radius: 50%;
+    border: 4px solid rgba(255,255,255,0.8);
+    box-shadow: 0 12px 40px rgba(101,72,28,0.18), 0 0 0 8px rgba(10,144,136,0.10);
+    background: linear-gradient(135deg, #b8ddd8 0%, #d4e8c8 60%, #e8d0a8 100%);
+    display: flex; align-items: center; justify-content: center;
+    overflow: hidden; margin-bottom: 1.5rem;
+  }
+
+  .vet-creds-inline {
+    text-align: center; margin-bottom: 3rem;
+  }
+  .vet-creds-inline .name {
+    font-family: 'Playfair Display', serif; font-size: 1.9rem; color: var(--charcoal);
+    line-height: 1.1; margin-bottom: 0.35rem;
+  }
+  .vet-creds-inline .name em { color: var(--sage-dark); font-style: italic; }
+  .vet-creds-inline .creds {
+    font-size: 0.8rem; color: var(--light-text); letter-spacing: 0.09em; text-transform: uppercase;
+  }
+
+  .divider {
+    width: 48px; height: 2px;
+    background: linear-gradient(90deg, var(--sage-dark), var(--terra));
+    border-radius: 2px; margin: 0 auto 3rem;
+  }
+
+  .eyebrow {
+    font-size: 1rem; font-weight: 700; letter-spacing: 0.12em;
+    font-family: 'Cormorant Garamond', serif; font-style: italic;
+    text-transform: uppercase; color: var(--terra);
+    margin-bottom: 1rem;
+    display: inline-flex; align-items: center; gap: 0.7rem;
+  }
+  .eyebrow::before {
+    content: ''; display: inline-block;
+    width: 1.5rem; height: 1px; background: var(--terra); flex-shrink: 0;
+  }
+
+  .section-tag {
+    font-size: 1rem; letter-spacing: 0.12em; text-transform: uppercase;
+    font-family: 'Cormorant Garamond', serif; font-style: italic; font-weight: 700;
+    color: var(--terra); margin-bottom: 0.7rem;
+  }
+
+  /* meet the vet block */
+  .meet-block {
+    width: 100%; text-align: left; margin-bottom: 3.5rem;
+  }
+  .meet-block h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.6rem, 2.5vw, 2rem);
+    line-height: 1.2; color: var(--charcoal); margin-bottom: 1.2rem;
+  }
+  .meet-block h2 em { color: var(--sage-dark); font-style: italic; }
+
+  .hero-desc {
+    font-size: 1rem; line-height: 1.8; color: var(--mid); font-weight: 300;
+    margin-bottom: 1rem;
+  }
+  .hero-desc:last-child { margin-bottom: 0; }
+
+  /* story block */
+  .story-block {
+    width: 100%; text-align: left;
+    padding-top: 3rem;
+    border-top: 1px solid rgba(10,144,136,0.15);
+  }
+  .story-block h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.6rem, 2.5vw, 2rem);
+    line-height: 1.2; color: var(--charcoal); margin-bottom: 1.4rem;
+  }
+  .story-block h2 em { color: var(--sage-dark); font-style: italic; }
+  .story-block p {
+    font-size: 1rem; line-height: 1.82; color: var(--mid);
+    font-weight: 300; margin-bottom: 1.2rem;
+  }
+  .story-block p:last-child { margin-bottom: 0; }
+
+  /* ── FOOTER ── */
+  footer {
+    background: linear-gradient(135deg, #0c4e48 0%, #102e1e 100%);
+    color: rgba(255,255,255,0.5);
+    padding: 3.5rem 5rem;
+    display: flex; justify-content: space-between; align-items: center;
+    border-top: 1px solid rgba(10,144,136,0.2);
+  }
+  .footer-brand { font-family: 'Playfair Display', serif; font-size: 1.1rem; color: #d8f0ee; margin-bottom: 0.4rem; }
+  .footer-brand span { color: var(--terra-light); font-style: italic; }
+  .footer-sub { font-size: 0.8rem; }
+  .footer-links { display: flex; gap: 2rem; list-style: none; }
+  .footer-links a { text-decoration: none; font-size: 0.82rem; color: rgba(255,255,255,0.4); transition: color 0.2s; }
+  .footer-links a:hover { color: var(--sage-light); }
+  .footer-right { text-align: right; font-size: 0.8rem; }
+  .footer-phone { color: var(--terra-light); font-size: 1rem; margin-bottom: 0.3rem; }
+
+  /* ── ANIMATIONS ── */
+  .fade-up { opacity: 0; transform: translateY(24px); animation: fadeUp 0.7s ease forwards; }
+  @keyframes fadeUp { to { opacity: 1; transform: translateY(0); } }
+  .delay-1 { animation-delay: 0.15s; }
+  .delay-2 { animation-delay: 0.3s; }
+  .delay-3 { animation-delay: 0.45s; }
+
+  /* ── SCROLL INDICATORS ── */
+  .scroll-down, .scroll-up {
+    position: fixed; left: 50%; transform: translateX(-50%); z-index: 200;
+    cursor: pointer; width: 44px; height: 44px;
+    display: flex; align-items: center; justify-content: center;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.15); backdrop-filter: blur(6px);
+    border: 2px solid #ff7a00;
+    transition: opacity 0.4s ease, transform 0.3s ease, background 0.2s;
+  }
+  .scroll-down:hover, .scroll-up:hover { background: rgba(255,255,255,0.28); transform: translateX(-50%) scale(1.1); }
+  .scroll-down { bottom: 1.6rem; animation: bobDown 2s ease-in-out infinite; }
+  .scroll-up   { top: 5.5rem; animation: bobUp 2s ease-in-out infinite; opacity: 0; pointer-events: none; border-color: #00d4c8; }
+  .scroll-up.visible { opacity: 1; pointer-events: auto; }
+  .scroll-down.hidden { opacity: 0; pointer-events: none; }
+  @keyframes bobDown { 0%,100%{transform:translateX(-50%) translateY(0)} 50%{transform:translateX(-50%) translateY(5px)} }
+  @keyframes bobUp   { 0%,100%{transform:translateX(-50%) translateY(0)} 50%{transform:translateX(-50%) translateY(-5px)} }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 1100px) {
+    .vet-section { grid-template-columns: 80px minmax(0,1fr) 80px; }
+  }
+  @media (max-width: 760px) {
+    nav { padding: 1.2rem 2rem; }
+    .nav-links { gap: 1.4rem; }
+    .vet-section { grid-template-columns: 0 1fr 0; }
+    .vet-col-side { display: none; }
+    .vet-card-center { padding: 5rem 1.5rem 4rem; }
+    footer { flex-direction: column; gap: 2rem; text-align: center; padding: 3rem 2rem; }
+    .footer-right { text-align: center; }
+  }
+  @media (max-width: 600px) {
+    .nav-links { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav role="navigation" aria-label="Main navigation">
+  <div class="nav-logo">
+    <div style="font-family:'Playfair Display',serif;font-size:1.7rem;color:#0a9088;letter-spacing:0.02em;line-height:1.1;">Whisker<span style="color:#076058;font-style:italic;">Song</span></div>
+    <div style="font-family:'DM Sans',sans-serif;font-size:0.72rem;color:#0a9088;letter-spacing:0.08em;text-transform:uppercase;opacity:0.85;margin-top:0.15rem;">Mobile Rabbit & Small Animal Veterinarian</div>
+  </div>
+  <ul class="nav-links">
+    <li><a href="#">Home</a></li>
+    <li><a href="#" class="active" style="text-decoration:underline;text-underline-offset:4px;">About</a></li>
+    <li><a href="#">Services</a></li>
+    <li><a href="#">Pricing</a></li>
+    <li><a href="#">FAQ</a></li>
+    <li><a href="#">Contact</a></li>
+  </ul>
+  <button class="nav-cta">Book a Visit</button>
+</nav>
+
+<!-- UNIFIED VET SECTION -->
+<main id="main-content">
+<section class="vet-section" aria-label="About Dr. Chen & WhiskerSong">
+
+  <!-- Left teal/orange column -->
+  <div class="vet-col-side left" aria-hidden="true">
+    <div class="side-deco d1"></div>
+    <div class="side-deco d2"></div>
+  </div>
+
+  <!-- White centred card -->
+  <div class="vet-card-center">
+
+    <!-- Avatar -->
+    <div class="vet-avatar" aria-hidden="true">
+
+    </div>
+
+    <!-- Name & credentials -->
+    <div class="vet-creds-inline">
+      <div class="name">Dr. Matthew Tso, <em>DVM</em></div>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- Meet the vet -->
+    <div class="meet-block fade-up">
+      <div class="eyebrow">About me ♪</div>
+      <p class="hero-desc">
+        Long before my veterinary journey, I was volunteering at a clinic when a rat came in as a walk-in emergency. The staff did everything they could, but without specialized knowledge of exotics, the little guy didn't make it. It was then that I realized there were not enough exotic vets. Someone needed to look out for the little ones because they deserve the same treatment as any other animal.
+      </p>
+      <p class="hero-desc">
+        I graduated in 2018 from Melbourne, Australia and have spent my career since then making sure I became that someone. Since graduation, I've practised in exotic-friendly clinics, shelter medicine, locuming, non-profits, and general practice. In addition, I strive to study daily to continuously increase my veterinary knowledge to be the best vet I can be.
+      </p>
+      <p class="hero-desc">
+        When I'm not working, you'll find me practising electric violin, playing badminton, or hanging out with my cat, Kindle. On sunny days, you might also catch me riding my motorcycle around town!
+      </p>
+    </div>
+
+    <!-- Our Story -->
+    <div class="story-block fade-up delay-1">
+      <div class="section-tag">Our Story</div>
+      <p>
+        The idea for WhiskerSong came about after many years working as a veterinarian and feeling that the personal and compassionate side of the field was starting to dissipate. WhiskerSong is here to focus on building bridges with pet owners and their animals and to work with them on their pet's treatment journey. Successful outcomes are built on collaboration after all!
+      </p>
+      <p>
+        A mobile practice opens the doors to consults that are not rushed, less stressful for the pet, and better understanding of the owner's situation to help as best we can without judgment. WhiskerSong is about taking the proper amount of time to investigate each case and restricting the number of daily appointments so each pet can get equal and sufficient attention.
+      </p>
+      <p>
+        So whether it's a simple wellness check or a complicated illness, every pet gets a vet who genuinely wants to help and isn't watching the clock.
+      </p>
+    </div>
+
+  </div>
+
+  <!-- Right teal/orange column -->
+  <div class="vet-col-side right" aria-hidden="true">
+    <div class="side-deco d1"></div>
+    <div class="side-deco d2"></div>
+  </div>
+
+</section>
+</main>
+
+<!-- FOOTER -->
+<footer role="contentinfo" aria-label="Site footer">
+  <div>
+    <div class="footer-brand">Whisker<span>Song</span></div>
+    <div class="footer-sub">Mobile Rabbit & Small Animal Veterinarian</div>
+  </div>
+  <ul class="footer-links">
+    <li><a href="#">Services</a></li>
+    <li><a href="#">About</a></li>
+    <li><a href="#">FAQ</a></li>
+    <li><a href="#">Privacy</a></li>
+  </ul>
+  <div class="footer-right">
+    <div class="footer-phone">📞 (604) 555-0192</div>
+    <div>© 2026 WhiskerSong Veterinary. All rights reserved.</div>
+  </div>
+</footer>
+
+<!-- Scroll indicators -->
+<div class="scroll-down" id="scrollDown" aria-label="Scroll down" role="button" tabindex="0" onclick="window.scrollBy({top: window.innerHeight * 0.8, behavior: 'smooth'})">
+  <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <polyline points="6,12 18,24 30,12" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+  </svg>
+</div>
+
+<div class="scroll-up" id="scrollUp" aria-label="Scroll to previous section" role="button" tabindex="0">
+  <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <polyline points="6,24 18,12 30,24" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+  </svg>
+</div>
+
+<script>
+  const scrollDown = document.getElementById('scrollDown');
+  const scrollUp   = document.getElementById('scrollUp');
+  const sections = Array.from(document.querySelectorAll('section, footer'));
+
+  function getPreviousSection() {
+    const threshold = window.scrollY - 80;
+    const above = sections.filter(s => s.offsetTop < threshold);
+    return above.length ? above[above.length - 1] : null;
+  }
+
+  scrollUp.addEventListener('click', () => {
+    const prev = getPreviousSection();
+    if (prev) { window.scrollTo({ top: prev.offsetTop, behavior: 'smooth' }); }
+    else { window.scrollTo({ top: 0, behavior: 'smooth' }); }
+  });
+
+  window.addEventListener('scroll', () => {
+    const scrolled = window.scrollY;
+    const maxScroll = document.body.scrollHeight - window.innerHeight;
+    scrollUp.classList.toggle('visible', scrolled > 120);
+    scrollDown.classList.toggle('hidden', scrolled >= maxScroll - 60);
+  });
+</script>
+
+</body>
+</html>

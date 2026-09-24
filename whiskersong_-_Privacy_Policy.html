@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Privacy Policy | WhiskerSong Mobile Veterinarian — Greater Vancouver, BC</title>
+<meta name="description" content="WhiskerSong's privacy policy. Learn how we collect, use, and protect your personal information and your pet's health records.">
+<meta name="robots" content="noindex, follow">
+<link rel="canonical" href="https://www.whiskersong.ca/privacy">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500&family=Cormorant+Garamond:ital,wght@0,500;1,500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --sage: #18b8ac;
+    --sage-light: #3ed4c8;
+    --sage-dark: #0a9088;
+    --cream: #e4f2f0;
+    --warm-white: #eef8f6;
+    --sand: #cce8e4;
+    --terra: #d96e14;
+    --terra-light: #eda04a;
+    --charcoal: #162624;
+    --mid: #3d7570;
+    --light-text: #6aadaa;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--warm-white);
+    color: var(--charcoal);
+    overflow-x: hidden;
+  }
+
+  body::before {
+    content: '';
+    position: fixed; inset: 0; z-index: 0; pointer-events: none;
+    background-image:
+      radial-gradient(ellipse at 15% 20%, rgba(101,72,28,0.06) 0%, transparent 45%),
+      radial-gradient(ellipse at 85% 10%, rgba(10,144,136,0.07) 0%, transparent 40%),
+      radial-gradient(ellipse at 70% 85%, rgba(101,72,28,0.07) 0%, transparent 45%),
+      radial-gradient(ellipse at 5% 90%,  rgba(10,144,136,0.05) 0%, transparent 40%);
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    flex-wrap: wrap; gap: 1rem;
+    padding: 1.4rem 3.5rem;
+    background: rgba(235,125,50,1.0);
+    backdrop-filter: blur(14px);
+    border-bottom: 1px solid rgba(255,255,255,0.12);
+    border-radius: 0 0 1.4rem 1.4rem;
+  }
+  .nav-logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.15rem; color: var(--sage-dark); letter-spacing: 0.02em;
+    text-decoration: none;
+  }
+  .nav-logo span { color: var(--terra); font-style: italic; }
+  .nav-links { display: flex; gap: 2.4rem; list-style: none; flex-wrap: wrap; margin-right: 2rem; }
+  .nav-links a {
+    text-decoration: none; font-size: 1.35rem; font-weight: 700;
+    font-family: 'Cormorant Garamond', serif; font-style: italic;
+    color: white; letter-spacing: 0.04em;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: rgba(255,255,255,0.7); }
+  .nav-cta {
+    background: #0a9088; color: white;
+    border: none; padding: 0.65rem 1.5rem; border-radius: 2rem;
+    font-size: 0.95rem; font-weight: 500; letter-spacing: 0.05em;
+    text-transform: uppercase; cursor: pointer; transition: background 0.2s;
+    text-decoration: none; display: inline-block;
+  }
+  .nav-cta:hover { background: #076058; }
+
+  /* ── PAGE HERO ── */
+  .page-hero {
+    padding: 9rem 5rem 5rem;
+    background:
+      radial-gradient(ellipse at 80% 90%, rgba(217,110,20,0.18) 0%, transparent 50%),
+      radial-gradient(ellipse at 10% 20%, rgba(10,144,136,0.12) 0%, transparent 45%),
+      #c8e8e0;
+    position: relative; z-index: 1;
+  }
+  .page-hero .eyebrow {
+    font-size: 1.1rem; font-weight: 700; letter-spacing: 0.12em;
+    font-family: 'Cormorant Garamond', serif; font-style: italic;
+    text-transform: uppercase; color: var(--terra);
+    margin-bottom: 1.2rem;
+    display: inline-flex; align-items: center; gap: 0.7rem;
+  }
+  .page-hero .eyebrow::before {
+    content: ''; display: inline-block;
+    width: 2rem; height: 1px; background: var(--terra); flex-shrink: 0;
+  }
+  .page-hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.2rem, 4vw, 3.2rem);
+    line-height: 1.15; color: var(--charcoal); margin-bottom: 1.2rem;
+  }
+  .page-hero h1 em { color: var(--sage-dark); font-style: italic; }
+  .page-hero .hero-meta {
+    font-size: 0.88rem; color: var(--mid); font-weight: 300;
+  }
+
+  /* ── POLICY BODY ── */
+  .policy-wrap {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 5rem 2rem 6rem;
+    position: relative; z-index: 1;
+  }
+
+  .policy-intro {
+    background: rgba(204,232,228,0.5);
+    border: 1px solid rgba(10,144,136,0.2);
+    border-radius: 1.2rem;
+    padding: 1.8rem 2.2rem;
+    margin-bottom: 3.5rem;
+    font-size: 1rem;
+    line-height: 1.75;
+    color: var(--mid);
+    font-weight: 300;
+  }
+  .policy-intro strong {
+    color: var(--charcoal);
+    font-weight: 500;
+  }
+
+  .policy-section {
+    margin-bottom: 3rem;
+  }
+
+  .policy-section h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.55rem;
+    color: var(--charcoal);
+    margin-bottom: 0.5rem;
+    display: flex; align-items: center; gap: 0.7rem;
+  }
+  .policy-section h2 .section-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 1.1rem;
+    color: var(--terra);
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    flex-shrink: 0;
+  }
+
+  .policy-divider {
+    width: 3rem; height: 2px;
+    background: linear-gradient(90deg, var(--terra), var(--sage-light));
+    border-radius: 2px;
+    margin-bottom: 1.2rem;
+  }
+
+  .policy-section p {
+    font-size: 0.97rem;
+    line-height: 1.8;
+    color: var(--mid);
+    font-weight: 300;
+    margin-bottom: 1rem;
+  }
+  .policy-section p:last-child { margin-bottom: 0; }
+
+  .policy-list {
+    list-style: none;
+    margin: 0.8rem 0 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .policy-list li {
+    font-size: 0.97rem;
+    line-height: 1.7;
+    color: var(--mid);
+    font-weight: 300;
+    padding-left: 1.6rem;
+    position: relative;
+  }
+  .policy-list li::before {
+    content: '—';
+    position: absolute; left: 0;
+    color: var(--terra); font-weight: 400;
+  }
+
+  .policy-note {
+    background: rgba(217,110,20,0.07);
+    border-left: 3px solid var(--terra);
+    border-radius: 0 0.6rem 0.6rem 0;
+    padding: 1rem 1.4rem;
+    margin-top: 1rem;
+    font-size: 0.88rem;
+    line-height: 1.7;
+    color: var(--mid);
+  }
+
+  /* ── CONTACT BAND ── */
+  .contact-band {
+    background: linear-gradient(135deg, #0d6e66 0%, #126055 40%, #2e3d1a 100%);
+    padding: 5rem 5rem;
+    text-align: center;
+    position: relative; z-index: 1;
+  }
+  .contact-band .section-tag {
+    font-size: 1.1rem; letter-spacing: 0.12em; text-transform: uppercase;
+    font-family: 'Cormorant Garamond', serif; font-style: italic; font-weight: 700;
+    color: var(--terra-light); margin-bottom: 0.8rem;
+  }
+  .contact-band h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.2rem; color: #e8f8f6; margin-bottom: 0.9rem;
+  }
+  .contact-band h2 em { color: var(--sage-light); font-style: italic; }
+  .contact-band p {
+    font-size: 0.97rem; color: rgba(232,248,246,0.65);
+    font-weight: 300; margin-bottom: 2rem;
+  }
+  .contact-band a.email-link {
+    color: var(--terra-light);
+    font-size: 1.05rem;
+    font-weight: 500;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(237,160,74,0.4);
+    padding-bottom: 2px;
+    transition: color 0.2s, border-color 0.2s;
+  }
+  .contact-band a.email-link:hover { color: white; border-color: white; }
+
+  /* ── FOOTER ── */
+  footer {
+    background: linear-gradient(135deg, #0c4e48 0%, #102e1e 100%);
+    color: rgba(255,255,255,0.5);
+    padding: 3.5rem 5rem;
+    display: flex; justify-content: space-between; align-items: center;
+    border-top: 1px solid rgba(10,144,136,0.2);
+    flex-wrap: wrap; gap: 1.5rem;
+    position: relative; z-index: 1;
+  }
+  .footer-brand { font-family: 'Playfair Display', serif; font-size: 1.1rem; color: #d8f0ee; margin-bottom: 0.4rem; }
+  .footer-brand span { color: var(--terra-light); font-style: italic; }
+  .footer-sub { font-size: 0.8rem; }
+  .footer-links { display: flex; gap: 2rem; list-style: none; flex-wrap: wrap; }
+  .footer-links a { text-decoration: none; font-size: 0.82rem; color: rgba(255,255,255,0.4); transition: color 0.2s; }
+  .footer-links a:hover { color: var(--sage-light); }
+  .footer-right { text-align: right; font-size: 0.8rem; }
+  .footer-phone { color: var(--terra-light); font-size: 1rem; margin-bottom: 0.3rem; }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 768px) {
+    nav { padding: 1.2rem 1.5rem; }
+    .nav-links { gap: 1.4rem; }
+    .nav-links a { font-size: 1.1rem; }
+    .page-hero { padding: 8rem 1.5rem 3rem; }
+    .policy-wrap { padding: 3rem 1.5rem 4rem; }
+    .contact-band { padding: 4rem 1.5rem; }
+    footer { padding: 2.5rem 1.5rem; flex-direction: column; align-items: flex-start; }
+    .footer-right { text-align: left; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav aria-label="Main navigation">
+  <div class="nav-logo">
+    <div style="font-family:'Playfair Display',serif;font-size:1.7rem;color:#0a9088;letter-spacing:0.02em;line-height:1.1;">Whisker<span style="color:#076058;font-style:italic;">Song</span></div>
+    <div style="font-family:'DM Sans',sans-serif;font-size:0.72rem;color:#0a9088;letter-spacing:0.08em;text-transform:uppercase;opacity:0.85;margin-top:0.15rem;">Mobile Rabbit & Small Animal Veterinarian</div>
+  </div>
+  <ul class="nav-links">
+    <li><a href="#">Home</a></li>
+    <li><a href="#">About</a></li>
+    <li><a href="#">Services</a></li>
+    <li><a href="#">Pricing</a></li>
+    <li><a href="#">FAQ</a></li>
+    <li><a href="#">Contact</a></li>
+  </ul>
+  <button class="nav-cta">Book a Visit</button>
+</nav>
+
+<!-- PAGE HERO -->
+<header class="page-hero" aria-label="Privacy Policy header">
+  <div class="eyebrow">Legal & Trust</div>
+  <h1>Privacy <em>Policy</em></h1>
+  <p class="hero-meta">Effective date: January 1, 2026 &nbsp;·&nbsp; Last updated: January 1, 2026</p>
+</header>
+
+<!-- POLICY CONTENT -->
+<main>
+  <div class="policy-wrap">
+
+    <!-- 1 -->
+    <section class="policy-section" aria-labelledby="s1">
+      <h2 id="s1">Who We Are</h2>
+      <div class="policy-divider"></div>
+      <p>WhiskerSong Veterinary operates as a mobile veterinary service based in Richmond, British Columbia, Canada. We are the data controller for personal information collected through our website (whiskersong.com), booking systems, and direct communications with clients.</p>
+      <p>We are subject to British Columbia's <em>Personal Information Protection Act</em> (PIPA) and Canada's <em>Personal Information Protection and Electronic Documents Act</em> (PIPEDA) where applicable.</p>
+    </section>
+
+    <!-- 2 -->
+    <section class="policy-section" aria-labelledby="s2">
+      <h2 id="s2">Information We Collect</h2>
+      <div class="policy-divider"></div>
+      <p>We collect only what we need to provide safe, high-quality veterinary care and to communicate with you. This may include:</p>
+      <ul class="policy-list">
+        <li><strong>Contact information</strong> — your name, phone number, email address, and home address (required for mobile visit scheduling)</li>
+        <li><strong>Pet information</strong> — your pet's name, species, breed, age, weight, and medical history</li>
+        <li><strong>Health records</strong> — examination findings, diagnoses, treatment notes, prescriptions, and lab results</li>
+        <li><strong>Payment information</strong> — billing name and payment method details (processed securely through our payment provider; we do not store full card numbers)</li>
+        <li><strong>Communications</strong> — messages, emails, or notes exchanged between you and our practice</li>
+        <li><strong>Website usage data</strong> — pages visited, browser type, and general location (via cookies and analytics tools, described below)</li>
+      </ul>
+      <div class="policy-note">We do not collect sensitive personal information about you (such as your health, finances, or immigration status) unless it is directly relevant to your pet's care and you have provided it voluntarily.</div>
+    </section>
+
+    <!-- 3 -->
+    <section class="policy-section" aria-labelledby="s3">
+      <h2 id="s3">How We Use Your Information</h2>
+      <div class="policy-divider"></div>
+      <p>We use the information we collect for the following purposes:</p>
+      <ul class="policy-list">
+        <li>Scheduling, confirming, and conducting home veterinary visits</li>
+        <li>Maintaining accurate and complete medical records for your pet</li>
+        <li>Communicating with you about your pet's care, follow-up, and appointments</li>
+        <li>Processing payments for services rendered</li>
+        <li>Sending appointment reminders and health-related follow-up messages</li>
+        <li>Complying with applicable veterinary and legal obligations in British Columbia</li>
+        <li>Improving our website and understanding how clients find and use our services</li>
+      </ul>
+      <p>We will not use your information for unrelated marketing purposes without your explicit consent. You may withdraw consent for non-essential communications at any time.</p>
+    </section>
+
+    <!-- 4 -->
+    <section class="policy-section" aria-labelledby="s4">
+      <h2 id="s4">How We Share Your Information</h2>
+      <div class="policy-divider"></div>
+      <p>WhiskerSong does not sell your personal information. We share information only in limited circumstances:</p>
+      <ul class="policy-list">
+        <li><strong>Referral veterinarians or specialists</strong> — with your consent, when your pet requires care beyond our scope of services</li>
+        <li><strong>Diagnostic laboratories</strong> — when samples are submitted for testing on your pet's behalf</li>
+        <li><strong>Service providers</strong> — third parties who help us operate our practice (e.g., booking software, payment processing, email platforms) under confidentiality agreements</li>
+        <li><strong>Legal requirements</strong> — when disclosure is required by law, a court order, or to protect the safety of a person or animal</li>
+        <li><strong>Regulatory bodies</strong> — the BC College of Veterinarians, if required for professional oversight or complaint investigation</li>
+      </ul>
+      <div class="policy-note">Any third-party service providers we use are required to handle your information with equivalent care and are prohibited from using it for their own purposes.</div>
+    </section>
+
+    <!-- 5 -->
+    <section class="policy-section" aria-labelledby="s5">
+      <h2 id="s5">Medical Records & Retention</h2>
+      <div class="policy-divider"></div>
+      <p>Veterinary medical records are subject to retention requirements under British Columbia regulations. We are required to retain your pet's health records for a minimum of five (5) years from the date of last service, or as otherwise required by law.</p>
+      <p>After the applicable retention period, records are securely destroyed. You may request a copy of your pet's records at any time by contacting us — we will provide them promptly and without charge.</p>
+    </section>
+
+    <!-- 6 -->
+    <section class="policy-section" aria-labelledby="s6">
+      <h2 id="s6">Security</h2>
+      <div class="policy-divider"></div>
+      <p>We take reasonable steps to protect your personal information from unauthorized access, disclosure, or loss. These measures include encrypted data storage, secure communication channels, and limiting access to records to authorized staff only.</p>
+      <p>No method of electronic transmission or storage is completely secure. If you have concerns about a specific data security matter, please contact us directly.</p>
+    </section>
+
+    <!-- 7 -->
+    <section class="policy-section" aria-labelledby="s7">
+      <h2 id="s7">Children's Privacy</h2>
+      <div class="policy-divider"></div>
+      <p>Our services are directed at adults who are the legal owners or caregivers of companion animals. We do not knowingly collect personal information from individuals under the age of 19. If a household includes a minor who interacts with us, we treat the parent or guardian as the primary account holder.</p>
+    </section>
+
+    <!-- 8 -->
+    <section class="policy-section" aria-labelledby="s8">
+      <h2 id="s8">Changes to This Policy</h2>
+      <div class="policy-divider"></div>
+      <p>We may update this Privacy Policy from time to time to reflect changes in our practices or applicable law. When we do, we will update the "Last updated" date at the top of this page. For significant changes, we will notify active clients by email.</p>
+      <p>We encourage you to review this page periodically. Continued use of our services after a policy update constitutes acceptance of the revised terms.</p>
+    </section>
+
+  </div>
+
+</main>
+
+<!-- FOOTER -->
+<footer role="contentinfo" aria-label="Site footer">
+  <div>
+    <div class="footer-brand">Whisker<span>Song</span></div>
+    <div class="footer-sub">Mobile Rabbit & Small Animal Veterinarian</div>
+  </div>
+  <div class="footer-right">
+    <div class="footer-phone">📞 (604) 339-2291</div>
+    <div>© 2026 WhiskerSong Veterinary. All rights reserved.</div>
+  </div>
+</footer>
+
+</body>
+</html>

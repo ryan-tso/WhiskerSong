@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact | WhiskerSong Mobile Veterinarian — Greater Vancouver, BC</title>
+<meta name="description" content="Get in touch with WhiskerSong Mobile Veterinarian. Book a home visit for your rabbit or small exotic animal in Richmond, Vancouver, Burnaby, Surrey, and the Lower Mainland.">
+<link rel="canonical" href="https://www.whiskersong.ca/contact">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500&family=Cormorant+Garamond:ital,wght@0,500;1,500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --sage: #18b8ac;
+    --sage-light: #3ed4c8;
+    --sage-dark: #0a9088;
+    --cream: #e4f2f0;
+    --warm-white: #eef8f6;
+    --sand: #cce8e4;
+    --terra: #d96e14;
+    --terra-light: #eda04a;
+    --charcoal: #162624;
+    --mid: #3d7570;
+    --light-text: #6aadaa;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { height: 100%; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background:
+      radial-gradient(ellipse at 95% 40%, rgba(217,110,20,0.18) 0%, transparent 48%),
+      radial-gradient(ellipse at 5% 70%,  rgba(10,144,136,0.10) 0%, transparent 42%),
+      #c4e2d8;
+    color: var(--charcoal);
+    overflow-x: hidden;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  body::before {
+    content: '';
+    position: fixed; inset: 0; z-index: 0; pointer-events: none;
+    background-image:
+      radial-gradient(ellipse at 15% 20%, rgba(101,72,28,0.06) 0%, transparent 45%),
+      radial-gradient(ellipse at 85% 10%, rgba(10,144,136,0.07) 0%, transparent 40%),
+      radial-gradient(ellipse at 70% 85%, rgba(101,72,28,0.07) 0%, transparent 45%),
+      radial-gradient(ellipse at 5% 90%,  rgba(10,144,136,0.05) 0%, transparent 40%);
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    flex-wrap: wrap; gap: 1rem;
+    padding: 1.4rem 3.5rem;
+    background: rgba(235,125,50,1.0);
+    backdrop-filter: blur(14px);
+    border-bottom: 1px solid rgba(255,255,255,0.12);
+    border-radius: 0 0 1.4rem 1.4rem;
+  }
+  .nav-logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.15rem; color: var(--sage-dark); letter-spacing: 0.02em;
+  }
+  .nav-logo span { color: var(--terra); font-style: italic; }
+  .nav-links { display: flex; gap: 2.4rem; list-style: none; flex-wrap: wrap; margin-right: 2rem; }
+  .nav-links a {
+    text-decoration: none; font-size: 1.35rem; font-weight: 700;
+    font-family: 'Cormorant Garamond', serif; font-style: italic;
+    color: white; letter-spacing: 0.04em;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: rgba(255,255,255,0.7); }
+  .nav-links a.active { color: rgba(255,255,255,0.7); border-bottom: 2px solid rgba(255,255,255,0.5); padding-bottom: 2px; }
+  .nav-cta {
+    background: #0a9088; color: white;
+    border: none; padding: 0.65rem 1.5rem; border-radius: 2rem;
+    font-size: 0.95rem; font-weight: 500; letter-spacing: 0.05em;
+    text-transform: uppercase; cursor: pointer; transition: background 0.2s;
+    text-decoration: none; display: inline-block;
+  }
+  .nav-cta:hover { background: #076058; }
+
+  /* ── PAGE HEADER ── */
+  .page-header {
+    padding: 10rem 5rem 5rem;
+    background:
+      radial-gradient(ellipse at 80% 90%, rgba(217,110,20,0.18) 0%, transparent 50%),
+      radial-gradient(ellipse at 10% 20%, rgba(10,144,136,0.12) 0%, transparent 45%),
+      #c8e8e0;
+    position: relative; overflow: hidden;
+  }
+  .page-header::after {
+    content: '';
+    position: absolute; bottom: -1px; left: 0; right: 0; height: 60px;
+    background:
+      radial-gradient(ellipse at 95% 40%, rgba(217,110,20,0.18) 0%, transparent 48%),
+      radial-gradient(ellipse at 5% 70%,  rgba(10,144,136,0.10) 0%, transparent 42%),
+      #c4e2d8;
+    clip-path: ellipse(55% 100% at 50% 100%);
+  }
+  .eyebrow {
+    font-size: 1.2rem; font-weight: 700; letter-spacing: 0.12em;
+    font-family: 'Cormorant Garamond', serif; font-style: italic;
+    text-transform: uppercase; color: var(--terra);
+    margin-bottom: 1rem;
+    display: inline-flex; align-items: center; gap: 0.7rem;
+  }
+  .eyebrow::before {
+    content: ''; display: inline-block;
+    width: 2rem; height: 1px; background: var(--terra);
+    flex-shrink: 0;
+  }
+  .page-header h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.4rem, 4vw, 3.4rem);
+    line-height: 1.12; color: var(--charcoal);
+  }
+  .page-header h1 em { color: var(--sage-dark); font-style: italic; }
+  .page-header p {
+    font-size: 1.05rem; line-height: 1.75;
+    color: var(--mid); max-width: 520px; margin-top: 1.2rem; font-weight: 300;
+  }
+
+  /* ── MAIN CONTENT ── */
+  main {
+    position: relative; z-index: 1;
+    padding: 8rem 5rem 0;
+    flex: 1;
+  }
+
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  /* ── INFO CARDS ── */
+  .info-column { display: flex; flex-direction: column; gap: 1.5rem; }
+
+  .info-card {
+    background: linear-gradient(135deg, #0d6e66 0%, #126055 40%, #2e3d1a 100%);
+    border: none;
+    border-radius: 1.4rem;
+    padding: 2rem 2.2rem;
+    box-shadow: 0 8px 32px rgba(10,80,70,0.18);
+    display: flex; gap: 1.4rem; align-items: flex-start;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .info-card:hover { transform: translateY(-2px); box-shadow: 0 16px 40px rgba(10,80,70,0.24); }
+
+  .info-icon {
+    width: 48px; height: 48px; border-radius: 1rem; flex-shrink: 0;
+    background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.2);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.3rem;
+  }
+
+  .info-body {}
+  .info-label {
+    font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.12em;
+    color: var(--terra-light); font-weight: 500; margin-bottom: 0.4rem;
+  }
+  .info-value {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.05rem; color: #e8f8f6; line-height: 1.5;
+  }
+  .info-sub { font-size: 0.85rem; color: rgba(232,248,246,0.65); margin-top: 0.3rem; font-weight: 300; }
+
+  /* ── HOURS CARD (same dark teal, no extra overrides needed) ── */
+
+  .hours-table { margin-top: 0.8rem; display: flex; flex-direction: column; gap: 0.4rem; }
+  .hours-row {
+    display: flex; justify-content: space-between; align-items: center;
+    font-size: 0.9rem; color: rgba(232,248,246,0.85);
+  }
+  .hours-row .day { font-weight: 400; }
+  .hours-row .time { font-weight: 300; color: var(--sage-light); }
+  .hours-row.closed .time { color: rgba(232,248,246,0.35); }
+  .hours-divider {
+    height: 1px; background:
+      radial-gradient(ellipse at 95% 40%, rgba(217,110,20,0.18) 0%, transparent 48%),
+      radial-gradient(ellipse at 5% 70%,  rgba(10,144,136,0.10) 0%, transparent 42%),
+      #c4e2d8;
+    margin: 0.5rem 0;
+  }
+
+  /* ── FORM COLUMN ── */
+  .form-column {}
+
+  .form-card {
+    background: linear-gradient(135deg, #0d6e66 0%, #126055 40%, #2e3d1a 100%);
+    border: none;
+    border-radius: 1.4rem;
+    padding: 2.5rem 2.5rem;
+    box-shadow: 0 8px 32px rgba(10,80,70,0.18);
+  }
+
+  .form-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem; color: #e8f8f6; margin-bottom: 0.4rem;
+  }
+  .form-card h3 em { color: var(--sage-light); font-style: italic; }
+  .form-card p { font-size: 0.88rem; color: rgba(232,248,246,0.65); font-weight: 300; margin-bottom: 1.8rem; line-height: 1.6; }
+
+  .field { margin-bottom: 1.2rem; }
+  .field label {
+    display: block; font-size: 0.75rem; text-transform: uppercase;
+    letter-spacing: 0.1em; color: var(--terra-light); font-weight: 500;
+    margin-bottom: 0.45rem;
+  }
+  .field input,
+  .field select,
+  .field textarea {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 1.5px solid rgba(255,255,255,0.15);
+    border-radius: 0.75rem;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.92rem; color: #e8f8f6;
+    background: rgba(255,255,255,0.1);
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+  }
+  .field input:focus,
+  .field select:focus,
+  .field textarea:focus {
+    border-color: rgba(255,255,255,0.4);
+    box-shadow: 0 0 0 3px rgba(255,255,255,0.08);
+  }
+  .field textarea { resize: vertical; min-height: 100px; }
+  .field select { cursor: pointer; }
+  .field input::placeholder,
+  .field textarea::placeholder { color: rgba(232,248,246,0.35); }
+  .field select option { background: #126055; color: #e8f8f6; }
+
+  .field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+
+  .btn-primary {
+    background: var(--terra); color: white;
+    padding: 0.9rem 2.2rem; border-radius: 2rem;
+    font-size: 0.9rem; font-weight: 500; cursor: pointer;
+    border: none; letter-spacing: 0.03em; width: 100%;
+    transition: background 0.25s, transform 0.15s;
+    font-family: 'DM Sans', sans-serif;
+    margin-top: 0.5rem;
+  }
+  .btn-primary:hover { background: var(--sage-dark); transform: translateY(-1px); }
+
+  /* ── SERVICE AREA NOTE ── */
+  .service-note {
+    max-width: 1100px; margin: 3rem auto 0;
+    background: var(--sand); border-radius: 1.2rem;
+    padding: 1.4rem 2rem;
+    display: flex; align-items: center; gap: 1rem;
+    border: 1px solid rgba(10,144,136,0.2);
+  }
+  .service-note span { font-size: 1.3rem; }
+  .service-note p { font-size: 0.88rem; color: var(--mid); line-height: 1.6; }
+  .service-note strong { color: var(--charcoal); font-weight: 500; }
+
+  /* ── FOOTER ── */
+  footer {
+    background: linear-gradient(135deg, #0c4e48 0%, #102e1e 100%);
+    color: rgba(255,255,255,0.5);
+    padding: 3.5rem 5rem;
+    display: flex; justify-content: space-between; align-items: center;
+    border-top: 1px solid rgba(10,144,136,0.2);
+    flex-wrap: wrap; gap: 1.5rem;
+  }
+  .footer-brand { font-family: 'Playfair Display', serif; font-size: 1.1rem; color: #d8f0ee; margin-bottom: 0.4rem; }
+  .footer-brand span { color: var(--terra-light); font-style: italic; }
+  .footer-sub { font-size: 0.8rem; }
+  .footer-links { display: flex; gap: 2rem; list-style: none; }
+  .footer-links a { text-decoration: none; font-size: 0.82rem; color: rgba(255,255,255,0.4); transition: color 0.2s; }
+  .footer-links a:hover { color: var(--sage-light); }
+  .footer-right { text-align: right; font-size: 0.8rem; }
+  .footer-phone { color: var(--terra-light); font-size: 1rem; margin-bottom: 0.3rem; }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 860px) {
+    nav { padding: 1.2rem 1.8rem; }
+    .page-header { padding: 8rem 2rem 4rem; }
+    main { padding: 4rem 2rem 0; }
+    .contact-grid { grid-template-columns: 1fr; gap: 2rem; }
+    .field-row { grid-template-columns: 1fr; }
+    footer { padding: 2.5rem 2rem; flex-direction: column; align-items: flex-start; }
+    .footer-right { text-align: left; }
+    .service-note { margin: 2rem 0 0; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav role="navigation" aria-label="Main navigation">
+  <div class="nav-logo">
+    <div style="font-family:'Playfair Display',serif;font-size:1.7rem;color:#0a9088;letter-spacing:0.02em;line-height:1.1;">Whisker<span style="color:#076058;font-style:italic;">Song</span></div>
+    <div style="font-family:'DM Sans',sans-serif;font-size:0.72rem;color:#0a9088;letter-spacing:0.08em;text-transform:uppercase;opacity:0.85;margin-top:0.15rem;">Mobile Rabbit & Small Animal Veterinarian</div>
+  </div>
+  <ul class="nav-links">
+    <li><a href="#">Home</a></li>
+    <li><a href="#">About</a></li>
+    <li><a href="#">Services</a></li>
+    <li><a href="#">Pricing</a></li>
+    <li><a href="#">FAQ</a></li>
+    <li><a href="#" class="active">Contact</a></li>
+  </ul>
+  <button class="nav-cta">Book a Visit</button>
+</nav>
+
+
+
+<!-- MAIN -->
+<main>
+  <div style="display:flex; justify-content:center; padding-bottom:2rem;">
+
+    <div class="info-card" style="max-width:560px; width:100%; flex-direction:column; gap:0;">
+
+      <!-- Address -->
+      <div style="display:flex; gap:1.4rem; align-items:flex-start; padding-bottom:1.6rem; border-bottom:1px solid rgba(255,255,255,0.1);">
+        <div class="info-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#e8457a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg></div>
+        <div class="info-body">
+          <div class="info-sub">Please note that as a mobile practice, we do not have a physical location.</div>
+        </div>
+      </div>
+
+      <!-- Phone -->
+      <div style="display:flex; gap:1.4rem; align-items:flex-start; padding:1.6rem 0; border-bottom:1px solid rgba(255,255,255,0.1);">
+        <div class="info-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#e8457a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.15 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.06 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
+        <div class="info-body">
+          <div class="info-label">Phone</div>
+          <div class="info-value">(604) 339-2291</div>
+          <div class="info-sub">Calling hours:<br>Mon/Tues: <span style="color:#3ed4c8;">10am–6pm</span><br>Wed/Thurs: <span style="color:#3ed4c8;">4pm–6pm</span><br>Fri: <span style="color:#3ed4c8;">10am–6pm</span><br>Sat: <span style="color:#3ed4c8;">10am–2pm</span><br>Sun: <span style="color:#3ed4c8;">4pm–6pm</span><br><span style="display:inline-block; margin-top:0.4rem;">Or leave a text at anytime.</span></div>
+        </div>
+      </div>
+
+      <!-- Email -->
+      <div style="display:flex; gap:1.4rem; align-items:flex-start; padding:1.6rem 0;">
+        <div class="info-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#e8457a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg></div>
+        <div class="info-body">
+          <div class="info-label">Email</div>
+          <div class="info-value">hello@whiskersong.com</div>
+          <div class="info-sub">All general inquiries welcome :)<br>We aim to respond in a timely manner (usually within 1 day).</div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</main>
+
+<!-- FOOTER -->
+<footer role="contentinfo" aria-label="Site footer">
+  <div>
+    <div class="footer-brand">Whisker<span>Song</span></div>
+    <div class="footer-sub">Mobile Rabbit & Small Animal Veterinarian</div>
+  </div>
+
+  <div class="footer-right">
+    <div class="footer-phone">📞 (604) 339-2291</div>
+    <div>© 2026 WhiskerSong Veterinary. All rights reserved.</div>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Services | WhiskerSong Mobile Rabbit & Small Animal Veterinarian — Greater Vancouver, BC</title>
+<meta name="description" content="WhiskerSong's mobile veterinary services: wellness exams, vaccinations, diagnostics, sick pet exams, minor procedures, and compassionate euthanasia — all in the comfort of your home.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://www.whiskersong.ca/services">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500&family=Cormorant+Garamond:ital,wght@0,500;1,500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --sage-light: #3ed4c8;
+    --sage-dark: #0a9088;
+    --terra: #d96e14;
+    --terra-light: #eda04a;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    color: #e8f8f6;
+    overflow-x: hidden;
+    background:
+      radial-gradient(ellipse at 8%  18%, rgba(217,110,20,0.22) 0%, transparent 38%),
+      radial-gradient(ellipse at 92% 12%, rgba(217,110,20,0.14) 0%, transparent 32%),
+      radial-gradient(ellipse at 75% 72%, rgba(217,110,20,0.16) 0%, transparent 36%),
+      radial-gradient(ellipse at 18% 85%, rgba(237,160,74,0.10) 0%, transparent 30%),
+      linear-gradient(135deg, #0d6e66 0%, #126055 45%, #2e3d1a 100%);
+    min-height: 100vh;
+  }
+
+  /* ── NAV ── */
+  nav.main-nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    flex-wrap: wrap; gap: 1rem; padding: 1.4rem 3.5rem;
+    background: rgba(235,125,50,1.0); backdrop-filter: blur(14px);
+    border-bottom: 1px solid rgba(255,255,255,0.12);
+    border-radius: 0 0 1.4rem 1.4rem;
+  }
+  .nav-links { display: flex; gap: 2.4rem; list-style: none; flex-wrap: wrap; margin-right: 2rem; }
+  .nav-links a {
+    text-decoration: none; font-size: 1.35rem; font-weight: 700;
+    font-family: 'Cormorant Garamond', serif; font-style: italic;
+    color: white; letter-spacing: 0.04em; transition: color 0.2s;
+  }
+  .nav-links a:hover, .nav-links a.active { color: rgba(255,255,255,0.65); }
+  .nav-cta {
+    background: #0a9088; color: white; border: none;
+    padding: 0.65rem 1.5rem; border-radius: 2rem;
+    font-size: 0.95rem; font-weight: 500; letter-spacing: 0.05em;
+    text-transform: uppercase; cursor: pointer; transition: background 0.2s;
+  }
+  .nav-cta:hover { background: #076058; }
+
+  /* ── PAGE WRAP ── */
+  .page-wrap { padding: 108px 5rem 3.5rem; position: relative; z-index: 1; }
+
+  /* ── PAGE HEADER ── */
+  .page-header { margin-bottom: 2.4rem; }
+  .section-tag {
+    font-size: 1.05rem; letter-spacing: 0.14em; text-transform: uppercase;
+    font-family: 'Cormorant Garamond', serif; font-style: italic; font-weight: 700;
+    color: var(--terra-light); margin-bottom: 0.45rem;
+    display: inline-flex; align-items: center; gap: 0.65rem;
+  }
+  .section-tag::before {
+    content: ''; display: inline-block;
+    width: 1.5rem; height: 1px; background: var(--terra-light);
+  }
+  .page-header h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.9rem, 3vw, 2.6rem);
+    line-height: 1.15; color: #e8f8f6; margin-bottom: 0.6rem;
+  }
+  .page-header h1 em { color: var(--sage-light); font-style: italic; }
+  .page-header p {
+    font-size: 0.95rem; line-height: 1.7;
+    color: rgba(232,248,246,0.65); font-weight: 300; max-width: 540px;
+  }
+
+  /* ── SERVICE GRID ── */
+  .services-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    gap: 1.2rem; margin-bottom: 3rem;
+  }
+
+  .service-card {
+    background: rgba(255,255,255,0.09);
+    border: 1px solid rgba(255,255,255,0.16);
+    border-radius: 1.4rem; padding: 1.7rem 1.6rem 1.5rem;
+    position: relative; overflow: hidden;
+    transition: transform 0.25s, box-shadow 0.25s, border-color 0.25s, background 0.25s;
+    cursor: default;
+  }
+  .service-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 18px 48px rgba(0,0,0,0.28);
+    border-color: rgba(255,255,255,0.28);
+    background: rgba(255,255,255,0.13);
+  }
+  .service-card::after {
+    content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 3px;
+    background: linear-gradient(90deg, var(--sage-dark), var(--terra));
+    transform: scaleX(0); transform-origin: left;
+    transition: transform 0.35s cubic-bezier(.4,0,.2,1);
+  }
+  .service-card:hover::after { transform: scaleX(1); }
+  .service-card::before {
+    content: ''; position: absolute; top: -40px; right: -40px;
+    width: 110px; height: 110px; border-radius: 50%;
+    background: radial-gradient(circle, rgba(217,110,20,0.2) 0%, transparent 70%);
+    pointer-events: none; opacity: 0; transition: opacity 0.3s;
+  }
+  .service-card:hover::before { opacity: 1; }
+
+  .card-top {
+    display: flex; align-items: center; gap: 0.9rem; margin-bottom: 1rem;
+  }
+  .card-icon {
+    width: 46px; height: 46px; border-radius: 0.85rem; flex-shrink: 0;
+    background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2);
+    display: flex; align-items: center; justify-content: center; font-size: 1.35rem;
+    transition: background 0.2s, transform 0.25s;
+  }
+  .service-card:hover .card-icon { background: rgba(255,255,255,0.16); transform: scale(1.08); }
+
+  .card-meta { flex: 1; }
+  .card-number { display: none; }
+  .card-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem; color: #e8f8f6; line-height: 1.2;
+  }
+  .card-title em { color: var(--sage-light); font-style: italic; }
+
+  .card-desc {
+    font-size: 0.875rem; line-height: 1.68;
+    color: rgba(232,248,246,0.66); font-weight: 300; margin-bottom: 1.1rem;
+  }
+
+  .card-bullets {
+    list-style: none; display: flex; flex-direction: column; gap: 0.4rem;
+    margin-bottom: 1.2rem;
+  }
+  .card-bullets li {
+    display: flex; align-items: flex-start; gap: 0.55rem;
+    font-size: 0.875rem; color: rgba(232,248,246,0.8); line-height: 1.45;
+  }
+  .cb-dot {
+    width: 5px; height: 5px; border-radius: 50%; flex-shrink: 0;
+    background: var(--sage-light); opacity: 0.75; margin-top: 0.4rem;
+  }
+
+  .card-tag {
+    display: inline-flex; align-items: center; gap: 0.4rem;
+    background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 2rem; padding: 0.26rem 0.75rem;
+    font-size: 0.875rem; color: rgba(232,248,246,0.65); font-weight: 500;
+    width: fit-content;
+  }
+  .card-tag.alert {
+    border-color: rgba(217,110,20,0.45); color: var(--terra-light);
+    background: rgba(217,110,20,0.1);
+  }
+
+  /* ── SPECIES SECTION ── */
+  .species-section {
+    padding: 0 5rem 3.5rem;
+    position: relative; z-index: 1;
+  }
+  .species-header {
+    margin-bottom: 1.4rem;
+  }
+  .species-header .section-tag { margin-bottom: 0.4rem; }
+  .species-header p {
+    font-size: 0.9rem; line-height: 1.65;
+    color: rgba(232,248,246,0.6); font-weight: 300; max-width: 500px;
+  }
+  .species-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 0.8rem;
+  }
+  .species-tile {
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.14);
+    border-radius: 1.1rem;
+    padding: 1.1rem 0.6rem 0.9rem;
+    text-align: center;
+    transition: background 0.2s, border-color 0.2s, transform 0.25s;
+    cursor: default;
+  }
+  .species-tile:hover {
+    background: rgba(255,255,255,0.14);
+    border-color: rgba(255,255,255,0.26);
+    transform: translateY(-3px);
+  }
+  .species-tile .s-emoji { font-size: 1.7rem; display: block; margin-bottom: 0.45rem; line-height: 1; }
+  .species-tile .s-name {
+    font-size: 0.875rem; font-weight: 500; color: rgba(232,248,246,0.82);
+    line-height: 1.3; letter-spacing: 0.01em;
+  }
+  .species-tile.unsure {
+    border-style: dashed; background: rgba(255,255,255,0.04);
+  }
+  .species-tile.unsure .s-name { color: rgba(232,248,246,0.5); }
+
+  /* ── SERVICE AREA SECTION ── */
+  .service-area {
+    padding: 3rem 5rem 3.5rem;
+    position: relative; z-index: 1;
+  }
+  .service-area .species-header { margin-bottom: 1.6rem; }
+  .area-grid {
+    display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.8rem;
+    margin-bottom: 1.4rem;
+  }
+  .area-tile {
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.14);
+    border-radius: 1.1rem; padding: 1rem 1.1rem;
+    display: flex; align-items: center; gap: 0.7rem;
+    transition: background 0.2s, border-color 0.2s, transform 0.22s;
+    cursor: default;
+  }
+  .area-tile:hover {
+    background: rgba(255,255,255,0.14);
+    border-color: rgba(255,255,255,0.26);
+    transform: translateY(-3px);
+  }
+  .area-tile .a-pin { font-size: 1.1rem; flex-shrink: 0; }
+  .area-tile .a-name {
+    font-size: 0.875rem; font-weight: 500;
+    color: rgba(232,248,246,0.85); line-height: 1.3;
+  }
+  .area-tile .a-note {
+    font-size: 0.875rem; color: rgba(232,248,246,0.45);
+    font-weight: 300; margin-top: 0.1rem;
+  }
+  .area-note {
+    font-size: 0.875rem; color: rgba(232,248,246,0.5);
+    font-weight: 300; font-style: italic;
+    display: flex; align-items: center; gap: 0.5rem;
+  }
+  .area-note::before {
+    content: ''; display: inline-block;
+    width: 1.2rem; height: 1px; background: rgba(232,248,246,0.3);
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    background: rgba(0,0,0,0.25); border-top: 1px solid rgba(255,255,255,0.1);
+    padding: 2.2rem 5rem;
+    display: flex; justify-content: space-between; align-items: center;
+    position: relative; z-index: 1;
+  }
+  .footer-brand { font-family: 'Playfair Display', serif; font-size: 1.05rem; color: #d8f0ee; margin-bottom: 0.28rem; }
+  .footer-brand span { color: var(--terra-light); font-style: italic; }
+  .footer-sub { font-size: 0.875rem; color: rgba(255,255,255,0.36); }
+  .footer-links { display: flex; gap: 2rem; list-style: none; }
+  .footer-links a { text-decoration: none; font-size: 0.875rem; color: rgba(255,255,255,0.36); transition: color 0.2s; }
+  .footer-links a:hover { color: var(--sage-light); }
+  .footer-right { text-align: right; font-size: 0.875rem; color: rgba(255,255,255,0.36); }
+  .footer-phone { color: var(--terra-light); font-size: 0.92rem; margin-bottom: 0.22rem; }
+
+  /* ── SCROLL CHEVRONS — identical to homepage ── */
+  .scroll-down, .scroll-up {
+    position: fixed; left: 50%; transform: translateX(-50%);
+    z-index: 200; cursor: pointer; width: 44px; height: 44px;
+    display: flex; align-items: center; justify-content: center;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.15); backdrop-filter: blur(6px);
+    transition: opacity 0.4s ease, transform 0.3s ease, background 0.2s;
+  }
+  .scroll-down:hover, .scroll-up:hover {
+    background: rgba(255,255,255,0.28);
+    transform: translateX(-50%) scale(1.1);
+  }
+  .scroll-down {
+    bottom: 1.6rem; border: 2px solid #ff7a00;
+    animation: bobDown 2s ease-in-out infinite;
+  }
+  .scroll-up {
+    top: 5.5rem; border: 2px solid #00d4c8;
+    animation: bobUp 2s ease-in-out infinite;
+    opacity: 0; pointer-events: none;
+  }
+  .scroll-up.visible  { opacity: 1; pointer-events: auto; }
+  .scroll-down.hidden { opacity: 0; pointer-events: none; }
+
+  @keyframes bobDown {
+    0%,100% { transform: translateX(-50%) translateY(0); }
+    50%      { transform: translateX(-50%) translateY(5px); }
+  }
+  @keyframes bobUp {
+    0%,100% { transform: translateX(-50%) translateY(0); }
+    50%      { transform: translateX(-50%) translateY(-5px); }
+  }
+
+  /* ── REVEAL ── */
+  .reveal {
+    opacity: 0; transform: translateY(18px);
+    transition: opacity 0.55s ease, transform 0.55s ease;
+  }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 1024px) {
+    .services-grid { grid-template-columns: repeat(2, 1fr); }
+    .species-grid  { grid-template-columns: repeat(4, 1fr); }
+    .area-grid     { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 700px) {
+    nav.main-nav { padding: 1.1rem 1.4rem; }
+    .nav-links { gap: 1.1rem; }
+    .nav-links a { font-size: 1.05rem; }
+    .page-wrap { padding: 96px 1.4rem 3rem; }
+    .services-grid { grid-template-columns: 1fr; }
+    .species-section { padding: 0 1.4rem 3rem; }
+    .species-grid  { grid-template-columns: repeat(4, 1fr); }
+    .service-area  { padding: 2rem 1.4rem 3rem; }
+    .area-grid     { grid-template-columns: repeat(2, 1fr); }
+    footer { flex-direction: column; gap: 1.4rem; text-align: center; padding: 2rem 1.4rem; }
+    .footer-right { text-align: center; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="main-nav" role="navigation" aria-label="Main navigation">
+  <div>
+    <div style="font-family:'Playfair Display',serif;font-size:1.7rem;color:#0a9088;letter-spacing:0.02em;line-height:1.1;">Whisker<span style="color:#076058;font-style:italic;">Song</span></div>
+    <div style="font-family:'DM Sans',sans-serif;font-size:0.72rem;color:#0a9088;letter-spacing:0.08em;text-transform:uppercase;opacity:0.85;margin-top:0.15rem;">Mobile Rabbit & Small Animal Veterinarian</div>
+  </div>
+  <ul class="nav-links">
+    <li><a href="#">Home</a></li>
+    <li><a href="#">About</a></li>
+    <li><a href="#" class="active" style="text-decoration:underline;text-underline-offset:4px;">Services</a></li>
+    <li><a href="#">Pricing</a></li>
+    <li><a href="#">FAQ</a></li>
+    <li><a href="#">Contact</a></li>
+  </ul>
+  <button class="nav-cta">Book a Visit</button>
+</nav>
+
+<main id="main-content">
+<div class="page-wrap">
+
+  <header class="page-header reveal">
+  </header>
+
+  <div class="services-grid">
+
+    <!-- 1 · WELLNESS -->
+    <div class="service-card reveal">
+      <div class="card-top">
+        <div class="card-icon">🩺</div>
+        <div class="card-meta">
+          <div class="card-title">Wellness <em>Exams</em></div>
+        </div>
+      </div>
+      <p class="card-desc">Annual or bi-annual exams are important to catch signs of early disease. Catching teeth spurs early vs. late may mean the difference between a simple diet change vs. more serious complications like gut stasis.</p>
+      <ul class="card-bullets">
+        <li><span class="cb-dot"></span>Full physical exam</li>
+        <li><span class="cb-dot"></span><span>Preliminary dental assessment including molar spurs in rabbits and guinea pigs<br><em style="font-size:0.8rem;opacity:0.7;">(*Note that a full oral exam requires sedation)</em></span></li>
+        <li><span class="cb-dot"></span>Husbandry guidance and other advice</li>
+      </ul>
+    </div>
+
+    <!-- 2 · VACCINATIONS -->
+    <div class="service-card reveal">
+      <div class="card-top">
+        <div class="card-icon">💉</div>
+        <div class="card-meta">
+          <div class="card-title">Vaccin<em>ations</em></div>
+        </div>
+      </div>
+      <p class="card-desc">Vaccinations are important to prevent serious and fatal diseases such as rabies, rabbit hemorrhagic disease, and ferret distemper. Routine parasite treatment is important to prevent flea infestations and insect-borne diseases such as Lyme.</p>
+      <ul class="card-bullets">
+        <li><span class="cb-dot"></span>We carry most vaccines for rabbits, ferrets, cats, and dogs</li>
+        <li><span class="cb-dot"></span>Vaccine certificates and certificates for travel</li>
+        <li><span class="cb-dot"></span>Parasite prevention discussion</li>
+      </ul>
+      <div class="card-tag alert">⚠️ Parasites and the diseases we vaccinate against can affect indoor pets as well.</div>
+    </div>
+
+    <!-- 3 · DIAGNOSTICS -->
+    <div class="service-card reveal">
+      <div class="card-top">
+        <div class="card-icon">🔬</div>
+        <div class="card-meta">
+          <div class="card-title">Diag<em>nostics</em></div>
+        </div>
+      </div>
+      <p class="card-desc">Physical exams can only reveal so much. Often further diagnostics are required to investigate further. We can provide all tests offered by external labs.</p>
+      <ul class="card-bullets">
+        <li><span class="cb-dot"></span>Blood tests — CBC & full biochemistry panels</li>
+        <li><span class="cb-dot"></span>Urinalysis — kidney function, crystals, infections</li>
+        <li><span class="cb-dot"></span>Fecal tests for parasites & other infectious agents</li>
+        <li><span class="cb-dot"></span>Microscopy & cytology</li>
+        <li><span class="cb-dot"></span>Referral to a partner clinic if X-ray or ultrasound is indicated</li>
+      </ul>
+    </div>
+
+    <!-- 4 · SICK PET -->
+    <div class="service-card reveal">
+      <div class="card-top">
+        <div class="card-icon">🤒</div>
+        <div class="card-meta">
+          <div class="card-title">Sick Pet <em>Exams</em></div>
+        </div>
+      </div>
+      <p class="card-desc">Home visits avoids the compounding stress of transport when your pet is already sick.</p>
+      <ul class="card-bullets">
+        <li><span class="cb-dot"></span>Thorough and non-rushed assessment of your ill pet</li>
+        <li><span class="cb-dot"></span>GI stasis evaluation & treatment — a life-threatening emergency</li>
+        <li><span class="cb-dot"></span>On-the-spot treatment and referral if needed</li>
+        <li><span class="cb-dot"></span>Follow-up calls to check in after the visit</li>
+      </ul>
+      <div class="card-tag alert">⚠️ Depending on the cause, the prognosis in gut stasis cases can drop dramatically by each hour. Contact us as soon as something seems wrong.</div>
+    </div>
+
+    <!-- 5 · MINOR PROCEDURES -->
+    <div class="service-card reveal">
+      <div class="card-top">
+        <div class="card-icon">🩹</div>
+        <div class="card-meta">
+          <div class="card-title">Minor <em>Procedures</em></div>
+        </div>
+      </div>
+      <p class="card-desc">Many common interventions can be performed safely and gently at home. Recovery also begins somewhere comfortable and familiar.</p>
+      <ul class="card-bullets">
+        <li><span class="cb-dot"></span>Minor wound and abscess management</li>
+        <li><span class="cb-dot"></span>Subcutaneous fluid therapy</li>
+        <li><span class="cb-dot"></span>Nail trims, anal gland expression, and minor grooming</li>
+        <li><span class="cb-dot"></span>Incisor trimming</li>
+        <li><span class="cb-dot"></span>Bandaging and cast placements</li>
+        <li><span class="cb-dot"></span>Microchip implantation</li>
+      </ul>
+      <div class="card-tag">Some procedures require sedation.</div>
+    </div>
+
+    <!-- 6 · END-OF-LIFE -->
+    <div class="service-card reveal">
+      <div class="card-top">
+        <div class="card-icon">🕊️</div>
+        <div class="card-meta">
+          <div class="card-title">Euthanasia &amp; <em>Farewell</em></div>
+        </div>
+      </div>
+      <p class="card-desc">You and your companion deserves a peaceful, unhurried farewell in the space they have always known. We are honoured to walk this path with you.</p>
+      <ul class="card-bullets">
+        <li><span class="cb-dot"></span>Fully in-home euthanasia</li>
+        <li><span class="cb-dot"></span>3 or 4 step process, beginning with gentle sedation</li>
+        <li><span class="cb-dot"></span>No time pressure</li>
+        <li><span class="cb-dot"></span>Aftercare and cremation coordination & pet loss grief support</li>
+      </ul>
+      <div class="card-tag">For giant breed dogs, please contact us to discuss as coordination and planning is required prior to the visit.</div>
+    </div>
+
+  </div><!-- /grid -->
+</div><!-- /page-wrap -->
+
+<!-- SPECIES SEEN -->
+<section class="species-section">
+  <div class="species-header reveal">
+    <div class="section-tag">Species We See</div>
+  </div>
+  <div class="species-grid">
+    <div class="species-tile reveal">
+      <span class="s-emoji">🐇</span>
+      <div class="s-name">Rabbits</div>
+    </div>
+    <div class="species-tile reveal">
+      <span class="s-emoji">🐹</span>
+      <div class="s-name">Guinea Pigs</div>
+    </div>
+    <div class="species-tile reveal">
+      <span class="s-emoji">🐭</span>
+      <div class="s-name">Chinchillas</div>
+    </div>
+    <div class="species-tile reveal">
+      <span class="s-emoji">🦦</span>
+      <div class="s-name">Ferrets</div>
+    </div>
+    <div class="species-tile reveal">
+      <span class="s-emoji">🦔</span>
+      <div class="s-name">Hedgehogs</div>
+    </div>
+    <div class="species-tile reveal">
+      <span class="s-emoji">🐀</span>
+      <div class="s-name">Rats, Mice & Other Rodents</div>
+    </div>
+    <div class="species-tile reveal">
+      <span class="s-emoji">🐿️</span>
+      <div class="s-name">Sugar Gliders</div>
+    </div>
+    <div class="species-tile reveal">
+      <span class="s-emoji">🐶</span>
+      <div class="s-name">Dogs</div>
+    </div>
+    <div class="species-tile reveal">
+      <span class="s-emoji">🐱</span>
+      <div class="s-name">Cats</div>
+    </div>
+    <div class="species-tile unsure reveal">
+      <span class="s-emoji">❓</span>
+      <div class="s-name">Not sure? Ask us</div>
+    </div>
+  </div>
+  <div class="area-note reveal" style="margin-top:1.1rem;">We are unable to see birds or reptiles. Please contact us if you are unsure if we can see your pet.</div>
+</section>
+
+</main>
+
+<!-- SERVICE AREA -->
+<section class="service-area">
+  <div class="species-header reveal">
+    <div class="section-tag">Service Area</div>
+  </div>
+  <div class="area-grid">
+    <div class="area-tile reveal">
+      <span class="a-pin">📍</span>
+      <div><div class="a-name">Richmond</div><div class="a-note">Primary base</div></div>
+    </div>
+    <div class="area-tile reveal">
+      <span class="a-pin">📍</span>
+      <div><div class="a-name">Vancouver</div><div class="a-note">All neighbourhoods</div></div>
+    </div>
+    <div class="area-tile reveal">
+      <span class="a-pin">📍</span>
+      <div><div class="a-name">Burnaby</div></div>
+    </div>
+    <div class="area-tile reveal">
+      <span class="a-pin">📍</span>
+      <div><div class="a-name">Surrey</div></div>
+    </div>
+    <div class="area-tile reveal">
+      <span class="a-pin">📍</span>
+      <div><div class="a-name">Delta</div></div>
+    </div>
+    <div class="area-tile reveal">
+      <span class="a-pin">📍</span>
+      <div><div class="a-name">New Westminster</div></div>
+    </div>
+    <div class="area-tile reveal">
+      <span class="a-pin">📍</span>
+      <div><div class="a-name">Coquitlam</div><div class="a-note">Incl. Port Coquitlam & Port Moody</div></div>
+    </div>
+    <div class="area-tile reveal">
+      <span class="a-pin">📍</span>
+      <div><div class="a-name">North & West Vancouver</div></div>
+    </div>
+  </div>
+  <div class="area-note reveal">Outside these areas? Contact us — extended travel may be possible for end-of-life visits.</div>
+</section>
+
+<!-- FOOTER -->
+<footer role="contentinfo">
+  <div>
+    <div class="footer-brand">Whisker<span>Song</span></div>
+    <div class="footer-sub">Mobile Rabbit & Small Animal Veterinarian</div>
+  </div>
+  <div class="footer-right">
+    <div class="footer-phone">📞 (604) 339-2291</div>
+    <div>© 2026 WhiskerSong Veterinary. All rights reserved.</div>
+  </div>
+</footer>
+
+<!-- SCROLL DOWN chevron -->
+<div class="scroll-down" id="scrollDown" aria-label="Scroll down" role="button" tabindex="0"
+     onclick="window.scrollBy({top: window.innerHeight * 0.8, behavior:'smooth'})">
+  <svg width="36" height="36" viewBox="0 0 36 36" fill="none">
+    <polyline points="6,12 18,24 30,12" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+  </svg>
+</div>
+
+<!-- SCROLL UP chevron -->
+<div class="scroll-up" id="scrollUp" aria-label="Scroll to top" role="button" tabindex="0">
+  <svg width="36" height="36" viewBox="0 0 36 36" fill="none">
+    <polyline points="6,24 18,12 30,24" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+  </svg>
+</div>
+
+<script>
+  const scrollDown = document.getElementById('scrollDown');
+  const scrollUp   = document.getElementById('scrollUp');
+  const sections   = Array.from(document.querySelectorAll('main, footer'));
+
+  function getPreviousSection() {
+    const threshold = window.scrollY - 80;
+    const above = sections.filter(s => s.offsetTop < threshold);
+    return above.length ? above[above.length - 1] : null;
+  }
+
+  scrollUp.addEventListener('click', () => {
+    const prev = getPreviousSection();
+    if (prev) window.scrollTo({ top: prev.offsetTop, behavior: 'smooth' });
+    else window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+
+  window.addEventListener('scroll', () => {
+    const s = window.scrollY;
+    const max = document.body.scrollHeight - window.innerHeight;
+    scrollUp.classList.toggle('visible', s > 120);
+    scrollDown.classList.toggle('hidden', s >= max - 60);
+  });
+
+  // Scroll-reveal with stagger
+  const cards = document.querySelectorAll('.service-card.reveal');
+  const header = document.querySelector('.page-header.reveal');
+  const speciesHeader = document.querySelector('.species-header.reveal');
+  const speciesTiles = document.querySelectorAll('.species-tile.reveal');
+
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); }
+    });
+  }, { threshold: 0.08 });
+
+  if (header) obs.observe(header);
+  if (speciesHeader) obs.observe(speciesHeader);
+  cards.forEach((el, i) => {
+    el.style.transitionDelay = (i * 0.07) + 's';
+    obs.observe(el);
+  });
+  speciesTiles.forEach((el, i) => {
+    el.style.transitionDelay = (i * 0.05) + 's';
+    obs.observe(el);
+  });
+  const areaTiles = document.querySelectorAll('.area-tile.reveal, .area-note.reveal');
+  areaTiles.forEach((el, i) => {
+    el.style.transitionDelay = (i * 0.05) + 's';
+    obs.observe(el);
+  });
+  const areaHeader = document.querySelectorAll('.service-area .species-header.reveal');
+  areaHeader.forEach(el => obs.observe(el));
+</script>
+</body>
+</html>

@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FAQ | WhiskerSong Mobile Rabbit & Small Animal Veterinarian</title>
+<meta name="description" content="Frequently asked questions about WhiskerSong's mobile veterinary services for rabbits, guinea pigs, chinchillas, and other small animals in Greater Vancouver, BC.">
+<link rel="canonical" href="https://www.whiskersong.ca/faq">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500&family=Cormorant+Garamond:ital,wght@0,500;1,500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --sage: #18b8ac;
+    --sage-light: #3ed4c8;
+    --sage-dark: #0a9088;
+    --cream: #e4f2f0;
+    --warm-white: #eef8f6;
+    --sand: #cce8e4;
+    --terra: #d96e14;
+    --terra-light: #eda04a;
+    --charcoal: #162624;
+    --mid: #3d7570;
+    --light-text: #6aadaa;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--warm-white);
+    color: var(--charcoal);
+    overflow-x: hidden;
+  }
+
+  body::before {
+    content: '';
+    position: fixed; inset: 0; z-index: 0; pointer-events: none;
+    background-image:
+      radial-gradient(ellipse at 15% 20%, rgba(101,72,28,0.06) 0%, transparent 45%),
+      radial-gradient(ellipse at 85% 10%, rgba(10,144,136,0.07) 0%, transparent 40%),
+      radial-gradient(ellipse at 70% 85%, rgba(101,72,28,0.07) 0%, transparent 45%),
+      radial-gradient(ellipse at 5% 90%,  rgba(10,144,136,0.05) 0%, transparent 40%);
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    flex-wrap: wrap; gap: 1rem;
+    padding: 1.4rem 3.5rem;
+    background: rgba(235,125,50,1.0);
+    backdrop-filter: blur(14px);
+    border-bottom: 1px solid rgba(255,255,255,0.12);
+    border-radius: 0 0 1.4rem 1.4rem;
+  }
+  .nav-logo {
+    text-decoration: none;
+  }
+  .nav-links { display: flex; gap: 2.4rem; list-style: none; flex-wrap: wrap; margin-left: -2rem; }
+  .nav-links a {
+    text-decoration: none; font-size: 1.35rem; font-weight: 700;
+    font-family: 'Cormorant Garamond', serif; font-style: italic;
+    color: white; letter-spacing: 0.04em;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: rgba(255,255,255,0.7); }
+  .nav-links a.active { color: rgba(255,255,255,0.7); border-bottom: 2px solid rgba(255,255,255,0.5); }
+  .nav-cta {
+    background: #0a9088; color: white;
+    border: none; padding: 0.65rem 1.5rem; border-radius: 2rem;
+    font-size: 0.95rem; font-weight: 500; letter-spacing: 0.05em;
+    text-transform: uppercase; cursor: pointer; transition: background 0.2s;
+    text-decoration: none; display: inline-block;
+  }
+  .nav-cta:hover { background: #076058; }
+
+  /* ── PAGE BANNER ── */
+  .page-banner {
+    padding: 10rem 5rem 5rem;
+    background:
+      radial-gradient(ellipse at 80% 90%, rgba(217,110,20,0.18) 0%, transparent 50%),
+      radial-gradient(ellipse at 10% 20%, rgba(10,144,136,0.12) 0%, transparent 45%),
+      #c8e8e0;
+    position: relative; overflow: hidden;
+  }
+  .page-banner::after {
+    content: '';
+    position: absolute; bottom: 0; left: 0; right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--sage-dark), var(--terra), var(--sage-light));
+  }
+  .banner-eyebrow {
+    font-size: 1.2rem; font-weight: 700; letter-spacing: 0.12em;
+    font-family: 'Cormorant Garamond', serif; font-style: italic;
+    text-transform: uppercase; color: var(--terra);
+    margin-bottom: 1.2rem;
+    display: inline-flex; align-items: center; gap: 0.7rem;
+  }
+  .banner-eyebrow::before {
+    content: ''; display: inline-block;
+    width: 2rem; height: 1px; background: var(--terra);
+    flex-shrink: 0;
+  }
+  .banner-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.4rem, 4vw, 3.4rem);
+    line-height: 1.12; color: var(--charcoal); margin-bottom: 1.2rem;
+  }
+  .banner-title em { color: var(--sage-dark); font-style: italic; }
+  .banner-desc {
+    font-size: 1.05rem; line-height: 1.75;
+    color: var(--mid); max-width: 520px; font-weight: 300;
+  }
+
+  /* ── FAQ SECTION ── */
+  .faq-section {
+    padding: 10rem 5rem 6rem;
+    background: linear-gradient(135deg, #0d6e66 0%, #126055 40%, #2e3d1a 100%);
+    position: relative; z-index: 1;
+  }
+
+  .faq-intro {
+    margin-bottom: 3.5rem;
+  }
+  .section-tag {
+    font-size: 1.2rem; letter-spacing: 0.12em; text-transform: uppercase;
+    font-family: 'Cormorant Garamond', serif; font-style: italic; font-weight: 700;
+    color: var(--terra-light); margin-bottom: 0.7rem;
+  }
+  .faq-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.2rem; line-height: 1.2; color: #e8f8f6;
+    margin-bottom: 0.8rem;
+  }
+  .faq-title em { color: var(--sage-light); font-style: italic; }
+  .faq-subtitle {
+    font-size: 0.95rem; color: rgba(232,248,246,0.65); font-weight: 300; line-height: 1.7;
+    max-width: 500px;
+  }
+
+  .faq-categories {
+    display: flex; flex-direction: column; gap: 2.8rem;
+  }
+
+  .faq-category-label {
+    font-family: 'Cormorant Garamond', serif; font-style: italic; font-weight: 500;
+    font-size: 1rem; text-transform: uppercase; letter-spacing: 0.1em;
+    color: var(--terra-light); margin-bottom: 1rem;
+    display: flex; align-items: center; gap: 0.6rem;
+  }
+  .faq-category-label::after {
+    content: ''; flex: 1; height: 1px; background: rgba(237,160,74,0.25);
+  }
+
+  .faq-list {
+    display: flex; flex-direction: column; gap: 0.8rem;
+  }
+
+  .faq-item {
+    background: rgba(255,255,255,0.09);
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 1.2rem;
+    overflow: hidden;
+    transition: border-color 0.25s;
+  }
+  .faq-item:hover { border-color: rgba(255,255,255,0.28); }
+  .faq-item.open { border-color: rgba(62,212,200,0.35); }
+
+  .faq-question {
+    width: 100%; background: none; border: none; cursor: pointer;
+    padding: 1.5rem 1.8rem;
+    display: flex; align-items: center; justify-content: space-between; gap: 1rem;
+    text-align: left;
+  }
+  .faq-question-text {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.05rem; color: #e8f8f6; line-height: 1.4;
+  }
+  .faq-chevron {
+    flex-shrink: 0;
+    width: 28px; height: 28px; border-radius: 50%;
+    background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2);
+    display: flex; align-items: center; justify-content: center;
+    transition: transform 0.3s, background 0.2s;
+  }
+  .faq-item.open .faq-chevron {
+    transform: rotate(180deg);
+    background: rgba(62,212,200,0.2);
+    border-color: rgba(62,212,200,0.4);
+  }
+  .faq-chevron svg { display: block; }
+
+  .faq-answer {
+    max-height: 0; overflow: hidden;
+    transition: max-height 0.35s ease, padding 0.3s ease;
+  }
+  .faq-item.open .faq-answer {
+    max-height: 400px;
+  }
+  .faq-answer-inner {
+    padding: 0 1.8rem 1.6rem;
+    font-size: 0.92rem; line-height: 1.78;
+    color: rgba(232,248,246,0.72); font-weight: 300;
+    border-top: 1px solid rgba(255,255,255,0.08);
+    padding-top: 1.2rem;
+  }
+  .faq-answer-inner a {
+    color: var(--sage-light); text-underline-offset: 3px;
+  }
+  .faq-answer-inner strong {
+    color: rgba(232,248,246,0.92); font-weight: 500;
+  }
+
+  /* ── STILL HAVE QUESTIONS CTA ── */
+  .faq-cta {
+    margin-top: 4rem;
+    background: rgba(255,255,255,0.07);
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 1.6rem; padding: 2.8rem 3rem;
+    display: flex; align-items: center; justify-content: space-between; gap: 2rem;
+    flex-wrap: wrap;
+  }
+  .faq-cta-left h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem; color: #e8f8f6; margin-bottom: 0.4rem;
+  }
+  .faq-cta-left h3 em { color: var(--sage-light); font-style: italic; }
+  .faq-cta-left p {
+    font-size: 0.9rem; color: rgba(232,248,246,0.6); font-weight: 300;
+  }
+  .btn-primary {
+    background: var(--terra); color: white;
+    padding: 0.9rem 2.2rem; border-radius: 2rem;
+    font-size: 0.9rem; font-weight: 500; cursor: pointer;
+    border: none; letter-spacing: 0.03em;
+    transition: background 0.25s, transform 0.15s;
+    text-decoration: none; display: inline-block; white-space: nowrap;
+  }
+  .btn-primary:hover { background: var(--sage-dark); transform: translateY(-1px); }
+
+  /* ── FOOTER ── */
+  footer {
+    background: linear-gradient(135deg, #0c4e48 0%, #102e1e 100%);
+    color: rgba(255,255,255,0.5);
+    padding: 3.5rem 5rem;
+    display: flex; align-items: center; justify-content: space-between;
+    flex-wrap: wrap; gap: 1.5rem;
+    border-top: 1px solid rgba(10,144,136,0.2);
+    position: relative; z-index: 1;
+  }
+  .footer-brand {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem; color: #d8f0ee; margin-bottom: 0.4rem;
+  }
+  .footer-brand span { color: var(--terra-light); font-style: italic; }
+  .footer-sub { font-size: 0.8rem; }
+  .footer-links { display: flex; gap: 2rem; list-style: none; flex-wrap: wrap; }
+  .footer-links a {
+    text-decoration: none; font-size: 0.82rem; color: rgba(255,255,255,0.4);
+    transition: color 0.2s;
+  }
+  .footer-links a:hover { color: var(--sage-light); }
+  .footer-right { text-align: right; font-size: 0.8rem; }
+  .footer-phone { color: var(--terra-light); font-size: 1rem; margin-bottom: 0.3rem; }
+
+  /* ── SCROLL ARROWS ── */
+  .scroll-down, .scroll-up {
+    position: fixed; left: 50%; transform: translateX(-50%);
+    z-index: 200; cursor: pointer;
+    width: 44px; height: 44px;
+    display: flex; align-items: center; justify-content: center;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.15);
+    backdrop-filter: blur(6px);
+    border: 2px solid #ff7a00;
+    transition: opacity 0.4s ease, transform 0.3s ease, background 0.2s;
+  }
+  .scroll-down:hover, .scroll-up:hover {
+    background: rgba(255,255,255,0.28);
+    transform: translateX(-50%) scale(1.1);
+  }
+  .scroll-down { bottom: 1.6rem; animation: bobDown 2s ease-in-out infinite; }
+  .scroll-up   { top: 5.5rem; animation: bobUp 2s ease-in-out infinite; opacity: 0; pointer-events: none; border-color: #00d4c8; }
+  .scroll-up.visible { opacity: 1; pointer-events: auto; }
+  .scroll-down.hidden { opacity: 0; pointer-events: none; }
+
+  @keyframes bobDown {
+    0%, 100% { transform: translateX(-50%) translateY(0); }
+    50%       { transform: translateX(-50%) translateY(5px); }
+  }
+  @keyframes bobUp {
+    0%, 100% { transform: translateX(-50%) translateY(0); }
+    50%       { transform: translateX(-50%) translateY(-5px); }
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 768px) {
+    nav { padding: 1.2rem 1.5rem; }
+    .nav-links { gap: 1.2rem; }
+    .page-banner { padding: 8rem 1.8rem 3.5rem; }
+    .faq-section { padding: 4rem 1.8rem; }
+    footer { padding: 2rem 1.8rem; flex-direction: column; align-items: flex-start; }
+    .footer-right { text-align: left; }
+    .faq-cta { flex-direction: column; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav aria-label="Main navigation">
+  <div class="nav-logo">
+    <div style="font-family:'Playfair Display',serif;font-size:1.7rem;color:#0a9088;letter-spacing:0.02em;line-height:1.1;">Whisker<span style="color:#076058;font-style:italic;">Song</span></div>
+    <div style="font-family:'DM Sans',sans-serif;font-size:0.72rem;color:#0a9088;letter-spacing:0.08em;text-transform:uppercase;opacity:0.85;margin-top:0.15rem;">Mobile Rabbit & Small Animal Veterinarian</div>
+  </div>
+  <ul class="nav-links">
+    <li><a href="#">Home</a></li>
+    <li><a href="#">About</a></li>
+    <li><a href="#">Services</a></li>
+    <li><a href="#">Pricing</a></li>
+    <li><a href="#" class="active">FAQ</a></li>
+    <li><a href="#">Contact</a></li>
+  </ul>
+  <button class="nav-cta">Book a Visit</button>
+</nav>
+
+<!-- FAQ BODY -->
+<section class="faq-section" aria-label="FAQ content">
+
+  <div class="faq-categories">
+
+    <!-- CATEGORY 1 -->
+    <div>
+      <div class="faq-category-label">About Our Service</div>
+      <ul class="faq-list" role="list">
+
+        <li class="faq-item" role="listitem">
+          <button class="faq-question" aria-expanded="false">
+            <span class="faq-question-text">What areas do you serve?</span>
+            <span class="faq-chevron" aria-hidden="true">
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <polyline points="2,4 7,10 12,4" stroke="#3ed4c8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </span>
+          </button>
+          <div class="faq-answer" role="region">
+            <div class="faq-answer-inner">
+              We serve <strong>Richmond, Vancouver, Delta, Burnaby, Surrey, and the surrounding Lower Mainland</strong>. Please contact us if you're unsure if your address falls within our service area.
+            </div>
+          </div>
+        </li>
+
+        <li class="faq-item" role="listitem">
+          <button class="faq-question" aria-expanded="false">
+            <span class="faq-question-text">Which animals do you treat?</span>
+            <span class="faq-chevron" aria-hidden="true">
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <polyline points="2,4 7,10 12,4" stroke="#3ed4c8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </span>
+          </button>
+          <div class="faq-answer" role="region">
+            <div class="faq-answer-inner">
+              WhiskerSong is focused on exotic small mammals (i.e. Pocket pets). This includes <strong>rabbits, guinea pigs, ferrets, chinchillas, rats/mice and other rodents, hedgehogs, and sugar gliders</strong>. We do also see cats and dogs as well!
+            </div>
+          </div>
+        </li>
+
+        <li class="faq-item" role="listitem">
+          <button class="faq-question" aria-expanded="false">
+            <span class="faq-question-text">How does a home visit actually work?</span>
+            <span class="faq-chevron" aria-hidden="true">
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <polyline points="2,4 7,10 12,4" stroke="#3ed4c8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </span>
+          </button>
+          <div class="faq-answer" role="region">
+            <div class="faq-answer-inner">
+              After booking, you will be emailed a new client form (if you are a first-time client) and/or an appointment form to fill out. We will discuss the day and time frame for the visit and the vet will show up within the time window at your home with all the necessary equipment. WhiskerSong is a house call service so <strong>all services will be performed in your home</strong>. Most appointments are <strong>30–60 minutes</strong> but we do not rush.
+            </div>
+          </div>
+        </li>
+
+      </ul>
+    </div>
+
+    <!-- CATEGORY 2 -->
+    <div>
+      <div class="faq-category-label">Bookings & Pricing</div>
+      <ul class="faq-list" role="list">
+
+        <li class="faq-item" role="listitem">
+          <button class="faq-question" aria-expanded="false">
+            <span class="faq-question-text">How do I book an appointment?</span>
+            <span class="faq-chevron" aria-hidden="true">
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <polyline points="2,4 7,10 12,4" stroke="#3ed4c8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </span>
+          </button>
+          <div class="faq-answer" role="region">
+            <div class="faq-answer-inner">
+              Please see our <strong>'Book a Visit'</strong> page using the button on the top right of the website.
+            </div>
+          </div>
+        </li>
+
+        <li class="faq-item" role="listitem">
+          <button class="faq-question" aria-expanded="false">
+            <span class="faq-question-text">Is there a travel or visit fee on top of the exam fee?</span>
+            <span class="faq-chevron" aria-hidden="true">
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <polyline points="2,4 7,10 12,4" stroke="#3ed4c8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </span>
+          </button>
+          <div class="faq-answer" role="region">
+            <div class="faq-answer-inner">
+              Yes, there is a <strong>call out fee</strong> that is separate from other charges to cover equipment and vehicle prep, travel time, fuel, and commercial insurance costs. The fee is dependent on distance from Richmond (where our home base is). Please see our <strong>pricing page</strong> for travel fee pricing.
+            </div>
+          </div>
+        </li>
+
+        <li class="faq-item" role="listitem">
+          <button class="faq-question" aria-expanded="false">
+            <span class="faq-question-text">What forms of payment do you accept?</span>
+            <span class="faq-chevron" aria-hidden="true">
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <polyline points="2,4 7,10 12,4" stroke="#3ed4c8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </span>
+          </button>
+          <div class="faq-answer" role="region">
+            <div class="faq-answer-inner">
+              We accept <strong>e-transfer (preferred), Visa, Mastercard, and cash</strong>. Please note we do not carry change for any cash transactions.
+            </div>
+          </div>
+        </li>
+
+      </ul>
+    </div>
+
+    <!-- CATEGORY 3 -->
+    <div>
+      <div class="faq-category-label">During the Visit</div>
+      <ul class="faq-list" role="list">
+
+        <li class="faq-item" role="listitem">
+          <button class="faq-question" aria-expanded="false">
+            <span class="faq-question-text">Do I need to do anything to prepare before you arrive?</span>
+            <span class="faq-chevron" aria-hidden="true">
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <polyline points="2,4 7,10 12,4" stroke="#3ed4c8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </span>
+          </button>
+          <div class="faq-answer" role="region">
+            <div class="faq-answer-inner">
+              Please have a space ready on the ground level for the consult. <strong>A table is preferable for pets under 15kg (33lbs)</strong>. If your pet is fractious, anxious, or aggressive, please give any pre-visit medications 2 hours prior to the visit — your appointment may be cancelled or rescheduled if at any time we feel it is unsafe or contraindicated to continue.
+            </div>
+          </div>
+        </li>
+
+        <li class="faq-item" role="listitem">
+          <button class="faq-question" aria-expanded="false">
+            <span class="faq-question-text">Can I have multiple pets seen in one visit?</span>
+            <span class="faq-chevron" aria-hidden="true">
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <polyline points="2,4 7,10 12,4" stroke="#3ed4c8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </span>
+          </button>
+          <div class="faq-answer" role="region">
+            <div class="faq-answer-inner">
+              Absolutely! Please let us know how many pets need to be seen at the time of booking so we can <strong>schedule enough time for each pet</strong>. If we are not made aware of additional pets beforehand, we will do our best to accommodate during the visit but cannot guarantee any additional pets can be seen.
+            </div>
+          </div>
+        </li>
+
+        <li class="faq-item" role="listitem">
+          <button class="faq-question" aria-expanded="false">
+            <span class="faq-question-text">What if my pet needs something you can't do at home?</span>
+            <span class="faq-chevron" aria-hidden="true">
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <polyline points="2,4 7,10 12,4" stroke="#3ed4c8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </span>
+          </button>
+          <div class="faq-answer" role="region">
+            <div class="faq-answer-inner">
+              If <strong>X-rays, ultrasound, or routine surgeries</strong> are required, we can book you in with one of our partnered general practice clinics in Richmond. If the case is an emergency or requires a specialist, we will make the referral and let you know the next steps.
+            </div>
+          </div>
+        </li>
+
+        <li class="faq-item" role="listitem">
+          <button class="faq-question" aria-expanded="false">
+            <span class="faq-question-text">Can I contact you with follow-up questions after the visit?</span>
+            <span class="faq-chevron" aria-hidden="true">
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <polyline points="2,4 7,10 12,4" stroke="#3ed4c8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </span>
+          </button>
+          <div class="faq-answer" role="region">
+            <div class="faq-answer-inner">
+              Yes of course! We want to see your little one get better so we are happy to <strong>extend support beyond the initial consult</strong> (for the same issue). A new visit and consult is required for any new issues or issues that have resolved but reoccurred after some time.
+            </div>
+          </div>
+        </li>
+
+      </ul>
+    </div>
+
+  </div><!-- /faq-categories -->
+
+  <!-- CTA -->
+  <div class="faq-cta" aria-label="Still have questions">
+    <div class="faq-cta-left">
+      <h3>Still have a <em>question?</em></h3>
+
+    </div>
+    <a href="#" class="btn-primary">Get in Touch</a>
+  </div>
+
+</section>
+
+<div style="background:linear-gradient(135deg,#0d6e66 0%,#126055 40%,#2e3d1a 100%);text-align:center;padding:1rem 0;">
+  <a href="#" style="font-size:0.82rem;color:rgba(255,255,255,0.4);text-decoration:none;letter-spacing:0.05em;">Privacy</a>
+</div>
+
+<!-- FOOTER -->
+<footer role="contentinfo" aria-label="Site footer">
+  <div>
+    <div class="footer-brand">Whisker<span>Song</span></div>
+    <div class="footer-sub">Mobile Rabbit & Small Animal Veterinarian</div>
+  </div>
+  <div class="footer-right">
+    <div class="footer-phone">📞 (604) 339-2291</div>
+    <div>© 2026 WhiskerSong Veterinary. All rights reserved.</div>
+  </div>
+</footer>
+
+<!-- SCROLL ARROWS -->
+<div class="scroll-down" id="scrollDown" aria-label="Scroll down" role="button" tabindex="0" onclick="window.scrollBy({top: window.innerHeight * 0.8, behavior: 'smooth'})">
+  <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <polyline points="6,12 18,24 30,12" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+  </svg>
+</div>
+<div class="scroll-up" id="scrollUp" aria-label="Scroll up" role="button" tabindex="0">
+  <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <polyline points="6,24 18,12 30,24" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+  </svg>
+</div>
+
+<script>
+  // ── FAQ accordion ──
+  document.querySelectorAll('.faq-question').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const item = btn.closest('.faq-item');
+      const isOpen = item.classList.contains('open');
+
+      // Close all
+      document.querySelectorAll('.faq-item.open').forEach(i => {
+        i.classList.remove('open');
+        i.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+      });
+
+      // Toggle clicked
+      if (!isOpen) {
+        item.classList.add('open');
+        btn.setAttribute('aria-expanded', 'true');
+      }
+    });
+  });
+
+  // ── Scroll arrows ──
+  const scrollDown = document.getElementById('scrollDown');
+  const scrollUp   = document.getElementById('scrollUp');
+  const sections   = Array.from(document.querySelectorAll('section, footer'));
+
+  scrollDown.addEventListener('click', () => {
+    window.scrollBy({ top: window.innerHeight * 0.8, behavior: 'smooth' });
+  });
+
+  scrollUp.addEventListener('click', () => {
+    const threshold = window.scrollY - 80;
+    const above = sections.filter(s => s.offsetTop < threshold);
+    const prev  = above.length ? above[above.length - 1] : null;
+    window.scrollTo({ top: prev ? prev.offsetTop : 0, behavior: 'smooth' });
+  });
+
+  window.addEventListener('scroll', () => {
+    const scrolled  = window.scrollY;
+    const maxScroll = document.body.scrollHeight - window.innerHeight;
+    scrolled > 120
+      ? scrollUp.classList.add('visible')
+      : scrollUp.classList.remove('visible');
+    scrolled >= maxScroll - 60
+      ? scrollDown.classList.add('hidden')
+      : scrollDown.classList.remove('hidden');
+  });
+</script>
+
+</body>
+</html>
