@@ -6,84 +6,16 @@
 <title>Pricing | WhiskerSong Mobile Rabbit & Small Animal Veterinarian — Greater Vancouver, BC</title>
 <meta name="description" content="Transparent pricing for WhiskerSong mobile vet services. Call-out fees by zone, health consultations, vaccinations, end-of-life care, and more — serving Greater Vancouver.">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500&family=Cormorant+Garamond:ital,wght@0,500;1,500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
 <style>
-  :root {
-    --sage: #18b8ac;
-    --sage-light: #3ed4c8;
-    --sage-dark: #0a9088;
-    --cream: #e4f2f0;
-    --warm-white: #eef8f6;
-    --sand: #cce8e4;
-    --terra: #d96e14;
-    --terra-light: #eda04a;
-    --charcoal: #162624;
-    --mid: #3d7570;
-    --light-text: #6aadaa;
-  }
-
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  html { scroll-behavior: smooth; }
-
-  body {
-    font-family: 'DM Sans', sans-serif;
-    background: var(--warm-white);
-    color: var(--charcoal);
-    overflow-x: hidden;
-  }
-
-  body::before {
-    content: '';
-    position: fixed; inset: 0; z-index: 0; pointer-events: none;
-    background-image:
-      radial-gradient(ellipse at 15% 20%, rgba(101,72,28,0.06) 0%, transparent 45%),
-      radial-gradient(ellipse at 85% 10%, rgba(10,144,136,0.07) 0%, transparent 40%),
-      radial-gradient(ellipse at 70% 85%, rgba(101,72,28,0.07) 0%, transparent 45%),
-      radial-gradient(ellipse at 5% 90%,  rgba(10,144,136,0.05) 0%, transparent 40%);
-  }
-
-  /* ── NAV ── */
-  nav {
-    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-    display: flex; align-items: center; justify-content: space-between;
-    flex-wrap: wrap; gap: 1rem;
-    padding: 1.4rem 3.5rem;
-    background: rgba(235,125,50,1.0);
-    backdrop-filter: blur(14px);
-    border-bottom: 1px solid rgba(255,255,255,0.12);
-    border-radius: 0 0 1.4rem 1.4rem;
-    justify-content: flex-start;
-  }
-  .nav-logo {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.15rem; color: var(--sage-dark); letter-spacing: 0.02em;
-    flex-shrink: 0;
-  }
-  .nav-logo span { color: var(--terra); font-style: italic; }
-  .nav-links { display: flex; gap: 2.4rem; list-style: none; flex-wrap: wrap; flex: 1; justify-content: center; margin-left: -2rem; }
-  .nav-links a {
-    text-decoration: none; font-size: 1.35rem; font-weight: 700;
-    font-family: 'Cormorant Garamond', serif; font-style: italic;
-    color: white; letter-spacing: 0.04em;
-    transition: color 0.2s;
-  }
-  .nav-links a:hover,
-  .nav-links a.active { color: rgba(255,255,255,0.7); }
-  .nav-cta {
-    background: #0a9088; color: white;
-    border: none; padding: 0.65rem 1.5rem; border-radius: 2rem;
-    font-size: 0.95rem; font-weight: 500; letter-spacing: 0.05em;
-    text-transform: uppercase; cursor: pointer; transition: background 0.2s;
-  }
-  .nav-cta:hover { background: #076058; }
-
-  /* ── HERO (same banner as homepage) ── */
+/* ── HERO (same banner as homepage) ── */
   .hero {
     min-height: 100vh;
     display: grid; grid-template-columns: 1fr 1fr;
     position: relative; overflow: hidden;
   }
 
-  .hero-left {
+.hero-left {
     display: flex; flex-direction: column; justify-content: center;
     padding: 8rem 4rem 5rem 5rem;
     position: relative; z-index: 2;
@@ -93,66 +25,55 @@
       #c8e8e0;
   }
 
-  .eyebrow {
+.eyebrow {
     font-size: 1.2rem; font-weight: 700; letter-spacing: 0.12em;
     font-family: 'Cormorant Garamond', serif; font-style: italic;
     text-transform: uppercase; color: var(--terra);
     margin-bottom: 1.4rem;
     display: inline-flex; align-items: center; gap: 0.7rem;
   }
-  .eyebrow::before {
+
+.eyebrow::before {
     content: ''; display: inline-block;
     width: 2rem; height: 1px; background: var(--terra);
     flex-shrink: 0;
   }
 
-  h1 {
+h1 {
     font-family: 'Playfair Display', serif;
     font-size: clamp(2.8rem, 4.5vw, 4rem);
     line-height: 1.12; color: var(--charcoal); margin-bottom: 1.8rem;
   }
-  h1 em { color: var(--sage-dark); font-style: italic; }
 
-  .hero-desc {
+h1 em { color: var(--sage-dark); font-style: italic; }
+
+.hero-desc {
     font-size: 1.05rem; line-height: 1.75;
     color: var(--mid); max-width: 440px; margin-bottom: 2.8rem; font-weight: 300;
   }
 
-  .hero-actions { display: flex; gap: 1rem; align-items: center; }
+.hero-actions { display: flex; gap: 1rem; align-items: center; }
 
-  .btn-primary {
-    background: var(--terra); color: white;
-    padding: 0.9rem 2.2rem; border-radius: 2rem;
-    font-size: 0.9rem; font-weight: 500; cursor: pointer;
-    border: none; letter-spacing: 0.03em;
-    transition: background 0.25s, transform 0.15s;
-    text-decoration: none; display: inline-block;
-  }
-  .btn-primary:hover { background: var(--sage-dark); transform: translateY(-1px); }
-
-  .hero-badge {
+.hero-badge {
     display: inline-flex; align-items: center; gap: 0.5rem;
     background: var(--sand); border-radius: 2rem;
     border: 1px solid rgba(10,144,136,0.3);
     padding: 0.5rem 1rem; font-size: 0.78rem; font-weight: 500;
     color: var(--sage-dark); margin-top: 3rem; width: fit-content;
   }
-  .badge-dot {
+
+.badge-dot {
     width: 7px; height: 7px; background: var(--terra); border-radius: 50%;
     animation: pulse 2s infinite;
   }
-  @keyframes pulse {
-    0%,100% { opacity:1; transform: scale(1); }
-    50% { opacity: 0.5; transform: scale(1.3); }
-  }
 
-  .hero-right {
+.hero-right {
     position: relative;
     background: linear-gradient(150deg, #a8dcd6 0%, #c2e8e0 35%, #d8e0c4 65%, #e8d4a8 100%);
     overflow: hidden;
   }
 
-  .hero-right::before {
+.hero-right::before {
     content: ''; position: absolute; inset: 0;
     background:
       radial-gradient(ellipse at 70% 30%, rgba(217,110,20,0.25) 0%, transparent 50%),
@@ -160,25 +81,28 @@
       radial-gradient(ellipse at 90% 85%, rgba(80,55,20,0.12) 0%, transparent 40%);
   }
 
-  .deco-circle {
+.deco-circle {
     position: absolute; border-radius: 50%;
     border: 1px solid rgba(10,144,136,0.22);
   }
-  .deco-circle.c1 { width: 380px; height: 380px; top: 15%; left: 10%; }
-  .deco-circle.c2 { width: 240px; height: 240px; top: 35%; left: 30%; }
-  .deco-circle.c3 { width: 500px; height: 500px; bottom: -15%; right: -10%; border-color: rgba(217,110,20,0.18); }
 
-  .hero-illustration {
+.deco-circle.c1 { width: 380px; height: 380px; top: 15%; left: 10%; }
+
+.deco-circle.c2 { width: 240px; height: 240px; top: 35%; left: 30%; }
+
+.deco-circle.c3 { width: 500px; height: 500px; bottom: -15%; right: -10%; border-color: rgba(217,110,20,0.18); }
+
+.hero-illustration {
     position: absolute; inset: 0;
     display: flex; align-items: center; justify-content: center; z-index: 2;
   }
 
-  .rabbit-svg {
+.rabbit-svg {
     width: 100%; max-width: 440px; height: auto;
     filter: drop-shadow(0 20px 40px rgba(101,72,28,0.18)) drop-shadow(0 0 60px rgba(10,144,136,0.18));
   }
 
-  .hero-card {
+.hero-card {
     position: absolute; bottom: 2.5rem; right: 2.5rem; z-index: 5;
     background: rgba(238,248,246,0.88); backdrop-filter: blur(10px);
     border: 1px solid rgba(10,144,136,0.22);
@@ -186,11 +110,14 @@
     box-shadow: 0 8px 32px rgba(101,72,28,0.12);
     min-width: 200px;
   }
-  .card-label { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.12em; color: var(--light-text); margin-bottom: 0.4rem; }
-  .card-value { font-family: 'Playfair Display', serif; font-size: 1.3rem; color: var(--charcoal); }
-  .card-sub { font-size: 0.78rem; color: var(--mid); margin-top: 0.2rem; }
 
-  /* ── PRICING SECTION ── */
+.card-label { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.12em; color: var(--light-text); margin-bottom: 0.4rem; }
+
+.card-value { font-family: 'Playfair Display', serif; font-size: 1.3rem; color: var(--charcoal); }
+
+.card-sub { font-size: 0.78rem; color: var(--mid); margin-top: 0.2rem; }
+
+/* ── PRICING SECTION ── */
   .pricing-section {
     padding: 9rem 5rem 5rem;
     position: relative; z-index: 1;
@@ -201,25 +128,29 @@
       #bce0d8;
   }
 
-  .pricing-intro {
+.pricing-intro {
     max-width: 680px; margin: 0 auto 4.5rem; text-align: center;
   }
-  .section-tag {
+
+.section-tag {
     font-size: 1.2rem; letter-spacing: 0.12em; text-transform: uppercase;
     font-family: 'Cormorant Garamond', serif; font-style: italic; font-weight: 700;
     color: var(--terra); margin-bottom: 0.7rem;
   }
-  .pricing-intro h2 {
+
+.pricing-intro h2 {
     font-family: 'Playfair Display', serif;
     font-size: clamp(2rem, 3.5vw, 2.8rem);
     line-height: 1.2; color: var(--charcoal); margin-bottom: 1rem;
   }
-  .pricing-intro h2 em { color: var(--sage-dark); font-style: italic; }
-  .pricing-intro p {
+
+.pricing-intro h2 em { color: var(--sage-dark); font-style: italic; }
+
+.pricing-intro p {
     font-size: 1rem; color: var(--mid); line-height: 1.75; font-weight: 300;
   }
 
-  /* ── PRICE CARDS ── */
+/* ── PRICE CARDS ── */
   .pricing-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -229,7 +160,7 @@
     align-items: start;
   }
 
-  .price-card {
+.price-card {
     display: grid;
     grid-template-rows: auto 1fr;
     background:
@@ -243,12 +174,13 @@
     overflow: hidden;
     transition: transform 0.25s, box-shadow 0.25s;
   }
-  .price-card:hover {
+
+.price-card:hover {
     transform: translateY(-4px);
     box-shadow: 0 12px 40px rgba(22,38,36,0.13);
   }
 
-  /* Make all card headers in the same grid row the same height */
+/* Make all card headers in the same grid row the same height */
   @supports (grid-template-rows: subgrid) {
     .pricing-grid {
       grid-template-rows: auto;
@@ -259,7 +191,7 @@
     }
   }
 
-  /* Fallback for browsers without subgrid: use flexbox stretch */
+/* Fallback for browsers without subgrid: use flexbox stretch */
   @supports not (grid-template-rows: subgrid) {
     .pricing-grid {
       align-items: stretch;
@@ -269,99 +201,118 @@
     }
   }
 
-  .price-card-header {
+.price-card-header {
     padding: 1.8rem 2rem 1.4rem;
     border-bottom: 1px solid rgba(10,144,136,0.1);
     background:
       radial-gradient(ellipse at 90% 10%, rgba(10,144,136,0.22) 0%, transparent 60%),
       #d4f0ec;
   }
-  .price-card-header .card-icon {
+
+.price-card-header .card-icon {
     font-size: 1.6rem; margin-bottom: 0.9rem;
   }
-  .price-card-header h3 {
+
+.price-card-header h3 {
     font-family: 'Playfair Display', serif;
     font-size: 1.3rem; color: var(--charcoal); margin-bottom: 0.35rem;
   }
-  .price-card-header .card-tagline {
+
+.price-card-header .card-tagline {
     font-size: 0.875rem; color: var(--mid); font-weight: 300; line-height: 1.5;
   }
 
-  .price-card-body {
+.price-card-body {
     padding: 1.6rem 2rem 2rem;
   }
 
-  /* Row style for line-item pricing */
+/* Row style for line-item pricing */
   .price-row {
     display: flex; justify-content: space-between; align-items: baseline;
     padding: 0.75rem 0;
     border-bottom: 1px solid rgba(204,232,228,0.6);
   }
-  .price-row:last-child { border-bottom: none; padding-bottom: 0; }
 
-  .price-row-label {
+.price-row:last-child { border-bottom: none; padding-bottom: 0; }
+
+.price-row-label {
     font-size: 0.875rem; color: var(--charcoal); font-weight: 400;
     display: flex; flex-direction: column; gap: 0.15rem;
   }
-  .price-row-label .sub {
+
+.price-row-label .sub {
     font-size: 0.875rem; color: var(--light-text); font-weight: 300;
   }
-  .price-row-amount {
+
+.price-row-amount {
     font-family: 'Playfair Display', serif;
     font-size: 1.1rem; color: var(--sage-dark);
     white-space: nowrap; margin-left: 1rem;
     flex-shrink: 0;
   }
 
-  /* Add-on sub-rows */
+/* Add-on sub-rows */
   .addon-label {
     font-size: 0.875rem; padding: 0.6rem 0 0.6rem 1rem;
     display: flex; justify-content: space-between; align-items: baseline;
     border-bottom: 1px dashed rgba(204,232,228,0.8);
     color: var(--mid);
   }
-  .addon-label:last-child { border-bottom: none; }
-  .addon-label .addon-name {
+
+.addon-label:last-child { border-bottom: none; }
+
+.addon-label .addon-name {
     display: flex; align-items: center; gap: 0.4rem;
   }
-  .addon-label .addon-name::before {
+
+.addon-label .addon-name::before {
     content: '+'; color: var(--terra-light); font-weight: 700; font-size: 0.875rem;
   }
-  .addon-label .addon-price {
+
+.addon-label .addon-price {
     font-family: 'Playfair Display', serif;
     font-size: 0.98rem; color: var(--mid); white-space: nowrap; margin-left: 1rem;
   }
 
-  .add-ons-header {
+.add-ons-header {
     font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.1em;
     color: var(--light-text); margin: 1rem 0 0.3rem;
   }
 
-  /* Zone badge pills */
+/* Zone badge pills */
   .zone-rows { display: flex; flex-direction: column; gap: 0; }
-  .zone-row {
+
+.zone-row {
     display: flex; align-items: center; justify-content: space-between;
     padding: 0.7rem 0;
     border-bottom: 1px solid rgba(204,232,228,0.6);
   }
-  .zone-row:last-child { border-bottom: none; }
-  .zone-badge {
+
+.zone-row:last-child { border-bottom: none; }
+
+.zone-badge {
     display: inline-flex; align-items: center; gap: 0.45rem;
     font-size: 0.875rem; font-weight: 500;
   }
-  .zone-dot {
+
+.zone-dot {
     width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0;
   }
-  .zone-dot.z1 { background: var(--sage-dark); }
-  .zone-dot.z2 { background: var(--terra); }
-  .zone-dot.z3 { background: #8a7a60; }
-  .zone-desc { font-size: 0.875rem; color: var(--light-text); margin-top: 0.1rem; }
-  .zone-amount {
+
+.zone-dot.z1 { background: var(--sage-dark); }
+
+.zone-dot.z2 { background: var(--terra); }
+
+.zone-dot.z3 { background: #8a7a60; }
+
+.zone-desc { font-size: 0.875rem; color: var(--light-text); margin-top: 0.1rem; }
+
+.zone-amount {
     font-family: 'Playfair Display', serif;
     font-size: 1.05rem; color: var(--sage-dark);
   }
 
-  /* Zone key below card */
+/* Zone key below card */
   .zone-note {
     margin-top: 1.2rem;
     background: rgba(204,232,228,0.35);
@@ -369,18 +320,21 @@
     padding: 0.9rem 1.1rem;
     font-size: 0.875rem; color: var(--mid); line-height: 1.6;
   }
-  .zone-note strong { color: var(--charcoal); font-weight: 500; }
 
-  /* ── DISCLAIMER ── */
+.zone-note strong { color: var(--charcoal); font-weight: 500; }
+
+/* ── DISCLAIMER ── */
   .pricing-note {
     max-width: 700px; margin: 4rem auto 0;
     text-align: center;
     font-size: 0.875rem; color: #8b3a62; line-height: 1.7; font-weight: 300;
   }
-  .pricing-note a { color: var(--terra); text-decoration: none; border-bottom: 1px solid rgba(217,110,20,0.4); }
-  .pricing-note a:hover { color: var(--sage-dark); border-color: var(--sage-dark); }
 
-  /* ── CTA ── */
+.pricing-note a { color: var(--terra); text-decoration: none; border-bottom: 1px solid rgba(217,110,20,0.4); }
+
+.pricing-note a:hover { color: var(--sage-dark); border-color: var(--sage-dark); }
+
+/* ── CTA ── */
   .cta-section {
     padding: 7rem 5rem; text-align: center;
     background:
@@ -390,55 +344,26 @@
       #bce0d8;
     position: relative; overflow: hidden;
   }
-  .cta-section h2 {
+
+.cta-section h2 {
     font-family: 'Playfair Display', serif;
     font-size: 3rem; color: var(--charcoal);
     margin-bottom: 1rem; position: relative; z-index: 1;
   }
-  .cta-section h2 em { color: var(--sage-dark); font-style: italic; }
-  .cta-section p { color: var(--mid); font-size: 1rem; margin-bottom: 2.5rem; font-weight: 300; position: relative; z-index: 1; }
-  .cta-buttons { display: flex; gap: 1rem; justify-content: center; align-items: center; position: relative; z-index: 1; }
 
-  /* ── FOOTER ── */
-  footer {
-    background: linear-gradient(135deg, #0c4e48 0%, #102e1e 100%);
-    color: rgba(255,255,255,0.5);
-    padding: 3.5rem 5rem;
-    display: flex; justify-content: space-between; align-items: center;
-    border-top: 1px solid rgba(10,144,136,0.2);
-  }
-  .footer-brand { font-family: 'Playfair Display', serif; font-size: 1.1rem; color: #d8f0ee; margin-bottom: 0.4rem; }
-  .footer-brand span { color: var(--terra-light); font-style: italic; }
-  .footer-sub { font-size: 0.8rem; }
-  .footer-links { display: flex; gap: 2rem; list-style: none; }
-  .footer-links a { text-decoration: none; font-size: 0.82rem; color: rgba(255,255,255,0.4); transition: color 0.2s; }
-  .footer-links a:hover { color: var(--sage-light); }
-  .footer-right { text-align: right; font-size: 0.8rem; }
-  .footer-phone { color: var(--terra-light); font-size: 1rem; margin-bottom: 0.3rem; }
+.cta-section h2 em { color: var(--sage-dark); font-style: italic; }
 
-  /* ── ANIMATIONS ── */
-  .fade-up { opacity: 0; transform: translateY(24px); animation: fadeUp 0.7s ease forwards; }
-  @keyframes fadeUp { to { opacity: 1; transform: translateY(0); } }
-  .delay-1 { animation-delay: 0.1s; }
-  .delay-2 { animation-delay: 0.25s; }
-  .delay-3 { animation-delay: 0.4s; }
+.cta-section p { color: var(--mid); font-size: 1rem; margin-bottom: 2.5rem; font-weight: 300; position: relative; z-index: 1; }
 
-  /* scroll indicators */
-  .scroll-down, .scroll-up {
-    position: fixed; left: 50%; transform: translateX(-50%);
-    z-index: 200; cursor: pointer; width: 44px; height: 44px;
-    display: flex; align-items: center; justify-content: center;
-    border-radius: 50%; background: rgba(255,255,255,0.15);
-    backdrop-filter: blur(6px); border: 2px solid #ff7a00;
-    transition: opacity 0.4s ease, transform 0.3s ease, background 0.2s;
-  }
-  .scroll-down:hover, .scroll-up:hover { background: rgba(255,255,255,0.28); transform: translateX(-50%) scale(1.1); }
-  .scroll-down { bottom: 1.6rem; animation: bobDown 2s ease-in-out infinite; }
-  .scroll-up   { top: 5.5rem; animation: bobUp 2s ease-in-out infinite; opacity: 0; pointer-events: none; border-color: #00d4c8; }
-  .scroll-up.visible { opacity: 1; pointer-events: auto; }
-  .scroll-down.hidden { opacity: 0; pointer-events: none; }
-  @keyframes bobDown { 0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(5px)} }
-  @keyframes bobUp   { 0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(-5px)} }
+.cta-buttons { display: flex; gap: 1rem; justify-content: center; align-items: center; position: relative; z-index: 1; }
+/* ── MOBILE ── */
+@media (max-width: 768px) {
+  .pricing-section { padding: 2.5rem 1.3rem 3rem; }
+  .pricing-intro { margin-bottom: 2.5rem; }
+  .pricing-grid { grid-template-columns: 1fr; gap: 1.3rem; }
+  .cta-section { padding: 4rem 1.3rem; }
+  .cta-section h2 { font-size: 2rem; }
+}
 </style>
 </head>
 <body>
@@ -453,7 +378,7 @@
     <li><a href="https://whiskersong.com" target="_top">Home</a></li>
     <li><a href="https://whiskersong.com/about" target="_top">About</a></li>
     <li><a href="https://whiskersong.com/services" target="_top">Services</a></li>
-    <li><a href="https://whiskersong.com/pricing" target="_top" class="active" style="text-decoration:underline;text-underline-offset:4px;">Pricing</a></li>
+    <li><a href="https://whiskersong.com/pricing" target="_top" class="active">Pricing</a></li>
     <li><a href="https://whiskersong.com/faq" target="_top">FAQ</a></li>
     <li><a href="https://whiskersong.com/contact" target="_top">Contact</a></li>
   </ul>
@@ -860,30 +785,7 @@
   <svg width="36" height="36" viewBox="0 0 36 36" fill="none"><polyline points="6,24 18,12 30,24" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
 </div>
 
-<script>
-  const scrollDown = document.getElementById('scrollDown');
-  const scrollUp   = document.getElementById('scrollUp');
-  const sections   = Array.from(document.querySelectorAll('section, footer'));
-
-  function getPreviousSection() {
-    const threshold = window.scrollY - 80;
-    const above = sections.filter(s => s.offsetTop < threshold);
-    return above.length ? above[above.length - 1] : null;
-  }
-
-  scrollUp.addEventListener('click', () => {
-    const prev = getPreviousSection();
-    if (prev) window.scrollTo({ top: prev.offsetTop, behavior: 'smooth' });
-    else window.scrollTo({ top: 0, behavior: 'smooth' });
-  });
-
-  window.addEventListener('scroll', () => {
-    const scrolled = window.scrollY;
-    const maxScroll = document.body.scrollHeight - window.innerHeight;
-    scrolled > 120 ? scrollUp.classList.add('visible') : scrollUp.classList.remove('visible');
-    scrolled >= maxScroll - 60 ? scrollDown.classList.add('hidden') : scrollDown.classList.remove('hidden');
-  });
-</script>
+<script src="scripts.js" defer></script>
 
 </body>
 </html>

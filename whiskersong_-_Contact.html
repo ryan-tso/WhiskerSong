@@ -7,82 +7,24 @@
 <meta name="description" content="Get in touch with WhiskerSong Mobile Veterinarian. Book a home visit for your rabbit or small exotic animal in Richmond, Vancouver, Burnaby, Surrey, and the Lower Mainland.">
 <link rel="canonical" href="https://www.whiskersong.ca/contact">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500&family=Cormorant+Garamond:ital,wght@0,500;1,500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
 <style>
-  :root {
-    --sage: #18b8ac;
-    --sage-light: #3ed4c8;
-    --sage-dark: #0a9088;
-    --cream: #e4f2f0;
-    --warm-white: #eef8f6;
-    --sand: #cce8e4;
-    --terra: #d96e14;
-    --terra-light: #eda04a;
-    --charcoal: #162624;
-    --mid: #3d7570;
-    --light-text: #6aadaa;
-  }
+html, body { height: 100%; }
 
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  html, body { height: 100%; }
-  html { scroll-behavior: smooth; }
-
-  body {
+body {
     font-family: 'DM Sans', sans-serif;
     background:
       radial-gradient(ellipse at 95% 40%, rgba(217,110,20,0.18) 0%, transparent 48%),
       radial-gradient(ellipse at 5% 70%,  rgba(10,144,136,0.10) 0%, transparent 42%),
       #c4e2d8;
     color: var(--charcoal);
-    overflow-x: hidden;
+    overflow-x: clip;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
   }
 
-  body::before {
-    content: '';
-    position: fixed; inset: 0; z-index: 0; pointer-events: none;
-    background-image:
-      radial-gradient(ellipse at 15% 20%, rgba(101,72,28,0.06) 0%, transparent 45%),
-      radial-gradient(ellipse at 85% 10%, rgba(10,144,136,0.07) 0%, transparent 40%),
-      radial-gradient(ellipse at 70% 85%, rgba(101,72,28,0.07) 0%, transparent 45%),
-      radial-gradient(ellipse at 5% 90%,  rgba(10,144,136,0.05) 0%, transparent 40%);
-  }
-
-  /* ── NAV ── */
-  nav {
-    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-    display: flex; align-items: center; justify-content: space-between;
-    flex-wrap: wrap; gap: 1rem;
-    padding: 1.4rem 3.5rem;
-    background: rgba(235,125,50,1.0);
-    backdrop-filter: blur(14px);
-    border-bottom: 1px solid rgba(255,255,255,0.12);
-    border-radius: 0 0 1.4rem 1.4rem;
-  }
-  .nav-logo {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.15rem; color: var(--sage-dark); letter-spacing: 0.02em;
-  }
-  .nav-logo span { color: var(--terra); font-style: italic; }
-  .nav-links { display: flex; gap: 2.4rem; list-style: none; flex-wrap: wrap; margin-right: 2rem; }
-  .nav-links a {
-    text-decoration: none; font-size: 1.35rem; font-weight: 700;
-    font-family: 'Cormorant Garamond', serif; font-style: italic;
-    color: white; letter-spacing: 0.04em;
-    transition: color 0.2s;
-  }
-  .nav-links a:hover { color: rgba(255,255,255,0.7); }
-  .nav-links a.active { color: rgba(255,255,255,0.7); border-bottom: 2px solid rgba(255,255,255,0.5); padding-bottom: 2px; }
-  .nav-cta {
-    background: #0a9088; color: white;
-    border: none; padding: 0.65rem 1.5rem; border-radius: 2rem;
-    font-size: 0.95rem; font-weight: 500; letter-spacing: 0.05em;
-    text-transform: uppercase; cursor: pointer; transition: background 0.2s;
-  }
-  .nav-cta:hover { background: #076058; }
-
-  /* ── PAGE HEADER ── */
+/* ── PAGE HEADER ── */
   .page-header {
     padding: 10rem 5rem 5rem;
     background:
@@ -91,7 +33,8 @@
       #c8e8e0;
     position: relative; overflow: hidden;
   }
-  .page-header::after {
+
+.page-header::after {
     content: '';
     position: absolute; bottom: -1px; left: 0; right: 0; height: 60px;
     background:
@@ -100,37 +43,42 @@
       #c4e2d8;
     clip-path: ellipse(55% 100% at 50% 100%);
   }
-  .eyebrow {
+
+.eyebrow {
     font-size: 1.2rem; font-weight: 700; letter-spacing: 0.12em;
     font-family: 'Cormorant Garamond', serif; font-style: italic;
     text-transform: uppercase; color: var(--terra);
     margin-bottom: 1rem;
     display: inline-flex; align-items: center; gap: 0.7rem;
   }
-  .eyebrow::before {
+
+.eyebrow::before {
     content: ''; display: inline-block;
     width: 2rem; height: 1px; background: var(--terra);
     flex-shrink: 0;
   }
-  .page-header h1 {
+
+.page-header h1 {
     font-family: 'Playfair Display', serif;
     font-size: clamp(2.4rem, 4vw, 3.4rem);
     line-height: 1.12; color: var(--charcoal);
   }
-  .page-header h1 em { color: var(--sage-dark); font-style: italic; }
-  .page-header p {
+
+.page-header h1 em { color: var(--sage-dark); font-style: italic; }
+
+.page-header p {
     font-size: 1.05rem; line-height: 1.75;
     color: var(--mid); max-width: 520px; margin-top: 1.2rem; font-weight: 300;
   }
 
-  /* ── MAIN CONTENT ── */
+/* ── MAIN CONTENT ── */
   main {
     position: relative; z-index: 1;
     padding: 8rem 5rem 0;
     flex: 1;
   }
 
-  .contact-grid {
+.contact-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 3rem;
@@ -138,10 +86,10 @@
     margin: 0 auto;
   }
 
-  /* ── INFO CARDS ── */
+/* ── INFO CARDS ── */
   .info-column { display: flex; flex-direction: column; gap: 1.5rem; }
 
-  .info-card {
+.info-card {
     background: linear-gradient(135deg, #0d6e66 0%, #126055 40%, #2e3d1a 100%);
     border: none;
     border-radius: 1.4rem;
@@ -150,37 +98,47 @@
     display: flex; gap: 1.4rem; align-items: flex-start;
     transition: transform 0.2s, box-shadow 0.2s;
   }
-  .info-card:hover { transform: translateY(-2px); box-shadow: 0 16px 40px rgba(10,80,70,0.24); }
 
-  .info-icon {
+.info-card:hover { transform: translateY(-2px); box-shadow: 0 16px 40px rgba(10,80,70,0.24); }
+
+.info-icon {
     width: 48px; height: 48px; border-radius: 1rem; flex-shrink: 0;
     background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.2);
     display: flex; align-items: center; justify-content: center;
     font-size: 1.3rem;
   }
 
-  .info-body {}
-  .info-label {
+.info-body {}
+
+.info-label {
     font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.12em;
     color: var(--terra-light); font-weight: 500; margin-bottom: 0.4rem;
   }
-  .info-value {
+
+.info-value {
     font-family: 'Playfair Display', serif;
     font-size: 1.05rem; color: #e8f8f6; line-height: 1.5;
+    overflow-wrap: anywhere;
   }
-  .info-sub { font-size: 0.85rem; color: rgba(232,248,246,0.65); margin-top: 0.3rem; font-weight: 300; }
 
-  /* ── HOURS CARD (same dark teal, no extra overrides needed) ── */
+.info-sub { font-size: 0.85rem; color: rgba(232,248,246,0.65); margin-top: 0.3rem; font-weight: 300; }
+
+/* ── HOURS CARD (same dark teal, no extra overrides needed) ── */
 
   .hours-table { margin-top: 0.8rem; display: flex; flex-direction: column; gap: 0.4rem; }
-  .hours-row {
+
+.hours-row {
     display: flex; justify-content: space-between; align-items: center;
     font-size: 0.9rem; color: rgba(232,248,246,0.85);
   }
-  .hours-row .day { font-weight: 400; }
-  .hours-row .time { font-weight: 300; color: var(--sage-light); }
-  .hours-row.closed .time { color: rgba(232,248,246,0.35); }
-  .hours-divider {
+
+.hours-row .day { font-weight: 400; }
+
+.hours-row .time { font-weight: 300; color: var(--sage-light); }
+
+.hours-row.closed .time { color: rgba(232,248,246,0.35); }
+
+.hours-divider {
     height: 1px; background:
       radial-gradient(ellipse at 95% 40%, rgba(217,110,20,0.18) 0%, transparent 48%),
       radial-gradient(ellipse at 5% 70%,  rgba(10,144,136,0.10) 0%, transparent 42%),
@@ -188,10 +146,10 @@
     margin: 0.5rem 0;
   }
 
-  /* ── FORM COLUMN ── */
+/* ── FORM COLUMN ── */
   .form-column {}
 
-  .form-card {
+.form-card {
     background: linear-gradient(135deg, #0d6e66 0%, #126055 40%, #2e3d1a 100%);
     border: none;
     border-radius: 1.4rem;
@@ -199,20 +157,24 @@
     box-shadow: 0 8px 32px rgba(10,80,70,0.18);
   }
 
-  .form-card h3 {
+.form-card h3 {
     font-family: 'Playfair Display', serif;
     font-size: 1.5rem; color: #e8f8f6; margin-bottom: 0.4rem;
   }
-  .form-card h3 em { color: var(--sage-light); font-style: italic; }
-  .form-card p { font-size: 0.88rem; color: rgba(232,248,246,0.65); font-weight: 300; margin-bottom: 1.8rem; line-height: 1.6; }
 
-  .field { margin-bottom: 1.2rem; }
-  .field label {
+.form-card h3 em { color: var(--sage-light); font-style: italic; }
+
+.form-card p { font-size: 0.88rem; color: rgba(232,248,246,0.65); font-weight: 300; margin-bottom: 1.8rem; line-height: 1.6; }
+
+.field { margin-bottom: 1.2rem; }
+
+.field label {
     display: block; font-size: 0.75rem; text-transform: uppercase;
     letter-spacing: 0.1em; color: var(--terra-light); font-weight: 500;
     margin-bottom: 0.45rem;
   }
-  .field input,
+
+.field input,
   .field select,
   .field textarea {
     width: 100%;
@@ -225,32 +187,26 @@
     outline: none;
     transition: border-color 0.2s, box-shadow 0.2s;
   }
-  .field input:focus,
+
+.field input:focus,
   .field select:focus,
   .field textarea:focus {
     border-color: rgba(255,255,255,0.4);
     box-shadow: 0 0 0 3px rgba(255,255,255,0.08);
   }
-  .field textarea { resize: vertical; min-height: 100px; }
-  .field select { cursor: pointer; }
-  .field input::placeholder,
+
+.field textarea { resize: vertical; min-height: 100px; }
+
+.field select { cursor: pointer; }
+
+.field input::placeholder,
   .field textarea::placeholder { color: rgba(232,248,246,0.35); }
-  .field select option { background: #126055; color: #e8f8f6; }
 
-  .field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+.field select option { background: #126055; color: #e8f8f6; }
 
-  .btn-primary {
-    background: var(--terra); color: white;
-    padding: 0.9rem 2.2rem; border-radius: 2rem;
-    font-size: 0.9rem; font-weight: 500; cursor: pointer;
-    border: none; letter-spacing: 0.03em; width: 100%;
-    transition: background 0.25s, transform 0.15s;
-    font-family: 'DM Sans', sans-serif;
-    margin-top: 0.5rem;
-  }
-  .btn-primary:hover { background: var(--sage-dark); transform: translateY(-1px); }
+.field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
 
-  /* ── SERVICE AREA NOTE ── */
+/* ── SERVICE AREA NOTE ── */
   .service-note {
     max-width: 1100px; margin: 3rem auto 0;
     background: var(--sand); border-radius: 1.2rem;
@@ -258,38 +214,28 @@
     display: flex; align-items: center; gap: 1rem;
     border: 1px solid rgba(10,144,136,0.2);
   }
-  .service-note span { font-size: 1.3rem; }
-  .service-note p { font-size: 0.88rem; color: var(--mid); line-height: 1.6; }
-  .service-note strong { color: var(--charcoal); font-weight: 500; }
 
-  /* ── FOOTER ── */
-  footer {
-    background: linear-gradient(135deg, #0c4e48 0%, #102e1e 100%);
-    color: rgba(255,255,255,0.5);
-    padding: 3.5rem 5rem;
-    display: flex; justify-content: space-between; align-items: center;
-    border-top: 1px solid rgba(10,144,136,0.2);
-    flex-wrap: wrap; gap: 1.5rem;
-  }
-  .footer-brand { font-family: 'Playfair Display', serif; font-size: 1.1rem; color: #d8f0ee; margin-bottom: 0.4rem; }
-  .footer-brand span { color: var(--terra-light); font-style: italic; }
-  .footer-sub { font-size: 0.8rem; }
-  .footer-links { display: flex; gap: 2rem; list-style: none; }
-  .footer-links a { text-decoration: none; font-size: 0.82rem; color: rgba(255,255,255,0.4); transition: color 0.2s; }
-  .footer-links a:hover { color: var(--sage-light); }
-  .footer-right { text-align: right; font-size: 0.8rem; }
-  .footer-phone { color: var(--terra-light); font-size: 1rem; margin-bottom: 0.3rem; }
+.service-note span { font-size: 1.3rem; }
 
-  /* ── RESPONSIVE ── */
+.service-note p { font-size: 0.88rem; color: var(--mid); line-height: 1.6; }
+
+.service-note strong { color: var(--charcoal); font-weight: 500; }
+
+/* ── RESPONSIVE ── */
   @media (max-width: 860px) {
     nav { padding: 1.2rem 1.8rem; }
     .page-header { padding: 8rem 2rem 4rem; }
-    main { padding: 4rem 2rem 0; }
+    main { padding: 2.5rem 1.2rem 0; }
     .contact-grid { grid-template-columns: 1fr; gap: 2rem; }
     .field-row { grid-template-columns: 1fr; }
     footer { padding: 2.5rem 2rem; flex-direction: column; align-items: flex-start; }
     .footer-right { text-align: left; }
     .service-note { margin: 2rem 0 0; }
+    /* tighten the stacked info card so the icon + text fit narrow screens;
+       !important overrides the inline gap on each row */
+    .info-card { padding: 1.5rem 1.3rem; }
+    .info-card > div { gap: 1rem !important; }
+    .info-icon { width: 42px; height: 42px; }
   }
 </style>
 </head>

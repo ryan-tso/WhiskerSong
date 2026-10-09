@@ -8,75 +8,9 @@
 <meta name="robots" content="noindex, follow">
 <link rel="canonical" href="https://www.whiskersong.ca/privacy">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500&family=Cormorant+Garamond:ital,wght@0,500;1,500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
 <style>
-  :root {
-    --sage: #18b8ac;
-    --sage-light: #3ed4c8;
-    --sage-dark: #0a9088;
-    --cream: #e4f2f0;
-    --warm-white: #eef8f6;
-    --sand: #cce8e4;
-    --terra: #d96e14;
-    --terra-light: #eda04a;
-    --charcoal: #162624;
-    --mid: #3d7570;
-    --light-text: #6aadaa;
-  }
-
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  html { scroll-behavior: smooth; }
-
-  body {
-    font-family: 'DM Sans', sans-serif;
-    background: var(--warm-white);
-    color: var(--charcoal);
-    overflow-x: hidden;
-  }
-
-  body::before {
-    content: '';
-    position: fixed; inset: 0; z-index: 0; pointer-events: none;
-    background-image:
-      radial-gradient(ellipse at 15% 20%, rgba(101,72,28,0.06) 0%, transparent 45%),
-      radial-gradient(ellipse at 85% 10%, rgba(10,144,136,0.07) 0%, transparent 40%),
-      radial-gradient(ellipse at 70% 85%, rgba(101,72,28,0.07) 0%, transparent 45%),
-      radial-gradient(ellipse at 5% 90%,  rgba(10,144,136,0.05) 0%, transparent 40%);
-  }
-
-  /* ── NAV ── */
-  nav {
-    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-    display: flex; align-items: center; justify-content: space-between;
-    flex-wrap: wrap; gap: 1rem;
-    padding: 1.4rem 3.5rem;
-    background: rgba(235,125,50,1.0);
-    backdrop-filter: blur(14px);
-    border-bottom: 1px solid rgba(255,255,255,0.12);
-    border-radius: 0 0 1.4rem 1.4rem;
-  }
-  .nav-logo {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.15rem; color: var(--sage-dark); letter-spacing: 0.02em;
-    text-decoration: none;
-  }
-  .nav-logo span { color: var(--terra); font-style: italic; }
-  .nav-links { display: flex; gap: 2.4rem; list-style: none; flex-wrap: wrap; margin-right: 2rem; }
-  .nav-links a {
-    text-decoration: none; font-size: 1.35rem; font-weight: 700;
-    font-family: 'Cormorant Garamond', serif; font-style: italic;
-    color: white; letter-spacing: 0.04em;
-    transition: color 0.2s;
-  }
-  .nav-links a:hover { color: rgba(255,255,255,0.7); }
-  .nav-cta {
-    background: #0a9088; color: white;
-    border: none; padding: 0.65rem 1.5rem; border-radius: 2rem;
-    font-size: 0.95rem; font-weight: 500; letter-spacing: 0.05em;
-    text-transform: uppercase; cursor: pointer; transition: background 0.2s;
-  }
-  .nav-cta:hover { background: #076058; }
-
-  /* ── PAGE HERO ── */
+/* ── PAGE HERO ── */
   .page-hero {
     padding: 9rem 5rem 5rem;
     background:
@@ -85,28 +19,33 @@
       #c8e8e0;
     position: relative; z-index: 1;
   }
-  .page-hero .eyebrow {
+
+.page-hero .eyebrow {
     font-size: 1.1rem; font-weight: 700; letter-spacing: 0.12em;
     font-family: 'Cormorant Garamond', serif; font-style: italic;
     text-transform: uppercase; color: var(--terra);
     margin-bottom: 1.2rem;
     display: inline-flex; align-items: center; gap: 0.7rem;
   }
-  .page-hero .eyebrow::before {
+
+.page-hero .eyebrow::before {
     content: ''; display: inline-block;
     width: 2rem; height: 1px; background: var(--terra); flex-shrink: 0;
   }
-  .page-hero h1 {
+
+.page-hero h1 {
     font-family: 'Playfair Display', serif;
     font-size: clamp(2.2rem, 4vw, 3.2rem);
     line-height: 1.15; color: var(--charcoal); margin-bottom: 1.2rem;
   }
-  .page-hero h1 em { color: var(--sage-dark); font-style: italic; }
-  .page-hero .hero-meta {
+
+.page-hero h1 em { color: var(--sage-dark); font-style: italic; }
+
+.page-hero .hero-meta {
     font-size: 0.88rem; color: var(--mid); font-weight: 300;
   }
 
-  /* ── POLICY BODY ── */
+/* ── POLICY BODY ── */
   .policy-wrap {
     max-width: 800px;
     margin: 0 auto;
@@ -114,7 +53,7 @@
     position: relative; z-index: 1;
   }
 
-  .policy-intro {
+.policy-intro {
     background: rgba(204,232,228,0.5);
     border: 1px solid rgba(10,144,136,0.2);
     border-radius: 1.2rem;
@@ -125,23 +64,25 @@
     color: var(--mid);
     font-weight: 300;
   }
-  .policy-intro strong {
+
+.policy-intro strong {
     color: var(--charcoal);
     font-weight: 500;
   }
 
-  .policy-section {
+.policy-section {
     margin-bottom: 3rem;
   }
 
-  .policy-section h2 {
+.policy-section h2 {
     font-family: 'Playfair Display', serif;
     font-size: 1.55rem;
     color: var(--charcoal);
     margin-bottom: 0.5rem;
     display: flex; align-items: center; gap: 0.7rem;
   }
-  .policy-section h2 .section-num {
+
+.policy-section h2 .section-num {
     font-family: 'Cormorant Garamond', serif;
     font-style: italic;
     font-size: 1.1rem;
@@ -151,30 +92,32 @@
     flex-shrink: 0;
   }
 
-  .policy-divider {
+.policy-divider {
     width: 3rem; height: 2px;
     background: linear-gradient(90deg, var(--terra), var(--sage-light));
     border-radius: 2px;
     margin-bottom: 1.2rem;
   }
 
-  .policy-section p {
+.policy-section p {
     font-size: 0.97rem;
     line-height: 1.8;
     color: var(--mid);
     font-weight: 300;
     margin-bottom: 1rem;
   }
-  .policy-section p:last-child { margin-bottom: 0; }
 
-  .policy-list {
+.policy-section p:last-child { margin-bottom: 0; }
+
+.policy-list {
     list-style: none;
     margin: 0.8rem 0 1rem;
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
   }
-  .policy-list li {
+
+.policy-list li {
     font-size: 0.97rem;
     line-height: 1.7;
     color: var(--mid);
@@ -182,13 +125,14 @@
     padding-left: 1.6rem;
     position: relative;
   }
-  .policy-list li::before {
+
+.policy-list li::before {
     content: '—';
     position: absolute; left: 0;
     color: var(--terra); font-weight: 400;
   }
 
-  .policy-note {
+.policy-note {
     background: rgba(217,110,20,0.07);
     border-left: 3px solid var(--terra);
     border-radius: 0 0.6rem 0.6rem 0;
@@ -199,28 +143,33 @@
     color: var(--mid);
   }
 
-  /* ── CONTACT BAND ── */
+/* ── CONTACT BAND ── */
   .contact-band {
     background: linear-gradient(135deg, #0d6e66 0%, #126055 40%, #2e3d1a 100%);
     padding: 5rem 5rem;
     text-align: center;
     position: relative; z-index: 1;
   }
-  .contact-band .section-tag {
+
+.contact-band .section-tag {
     font-size: 1.1rem; letter-spacing: 0.12em; text-transform: uppercase;
     font-family: 'Cormorant Garamond', serif; font-style: italic; font-weight: 700;
     color: var(--terra-light); margin-bottom: 0.8rem;
   }
-  .contact-band h2 {
+
+.contact-band h2 {
     font-family: 'Playfair Display', serif;
     font-size: 2.2rem; color: #e8f8f6; margin-bottom: 0.9rem;
   }
-  .contact-band h2 em { color: var(--sage-light); font-style: italic; }
-  .contact-band p {
+
+.contact-band h2 em { color: var(--sage-light); font-style: italic; }
+
+.contact-band p {
     font-size: 0.97rem; color: rgba(232,248,246,0.65);
     font-weight: 300; margin-bottom: 2rem;
   }
-  .contact-band a.email-link {
+
+.contact-band a.email-link {
     color: var(--terra-light);
     font-size: 1.05rem;
     font-weight: 500;
@@ -229,33 +178,15 @@
     padding-bottom: 2px;
     transition: color 0.2s, border-color 0.2s;
   }
-  .contact-band a.email-link:hover { color: white; border-color: white; }
 
-  /* ── FOOTER ── */
-  footer {
-    background: linear-gradient(135deg, #0c4e48 0%, #102e1e 100%);
-    color: rgba(255,255,255,0.5);
-    padding: 3.5rem 5rem;
-    display: flex; justify-content: space-between; align-items: center;
-    border-top: 1px solid rgba(10,144,136,0.2);
-    flex-wrap: wrap; gap: 1.5rem;
-    position: relative; z-index: 1;
-  }
-  .footer-brand { font-family: 'Playfair Display', serif; font-size: 1.1rem; color: #d8f0ee; margin-bottom: 0.4rem; }
-  .footer-brand span { color: var(--terra-light); font-style: italic; }
-  .footer-sub { font-size: 0.8rem; }
-  .footer-links { display: flex; gap: 2rem; list-style: none; flex-wrap: wrap; }
-  .footer-links a { text-decoration: none; font-size: 0.82rem; color: rgba(255,255,255,0.4); transition: color 0.2s; }
-  .footer-links a:hover { color: var(--sage-light); }
-  .footer-right { text-align: right; font-size: 0.8rem; }
-  .footer-phone { color: var(--terra-light); font-size: 1rem; margin-bottom: 0.3rem; }
+.contact-band a.email-link:hover { color: white; border-color: white; }
 
-  /* ── RESPONSIVE ── */
+/* ── RESPONSIVE ── */
   @media (max-width: 768px) {
     nav { padding: 1.2rem 1.5rem; }
     .nav-links { gap: 1.4rem; }
     .nav-links a { font-size: 1.1rem; }
-    .page-hero { padding: 8rem 1.5rem 3rem; }
+    .page-hero { padding: 2.5rem 1.5rem 3rem; }
     .policy-wrap { padding: 3rem 1.5rem 4rem; }
     .contact-band { padding: 4rem 1.5rem; }
     footer { padding: 2.5rem 1.5rem; flex-direction: column; align-items: flex-start; }
