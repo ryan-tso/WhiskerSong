@@ -94,18 +94,19 @@ nav {
 footer {
   background: linear-gradient(135deg, #0c4e48 0%, #102e1e 100%);
   color: rgba(255,255,255,0.5);
-  padding: 3.5rem 5rem;
-  display: flex; justify-content: space-between; align-items: center;
+  padding: 2.2rem 5rem;
   border-top: 1px solid rgba(10,144,136,0.2);
+  display: flex; justify-content: space-between; align-items: center;
+  position: relative; z-index: 1;
 }
-.footer-brand { font-family: 'Playfair Display', serif; font-size: 1.1rem; color: #d8f0ee; margin-bottom: 0.4rem; }
+.footer-brand { font-family: 'Playfair Display', serif; font-size: 1.05rem; color: #d8f0ee; margin-bottom: 0.28rem; }
 .footer-brand span { color: var(--terra-light); font-style: italic; }
-.footer-sub { font-size: 0.8rem; }
+.footer-sub { font-size: 0.875rem; color: rgba(255,255,255,0.36); }
 .footer-links { display: flex; gap: 2rem; list-style: none; }
-.footer-links a { text-decoration: none; font-size: 0.82rem; color: rgba(255,255,255,0.4); transition: color 0.2s; }
+.footer-links a { text-decoration: none; font-size: 0.875rem; color: rgba(255,255,255,0.36); transition: color 0.2s; }
 .footer-links a:hover { color: var(--sage-light); }
-.footer-right { text-align: right; font-size: 0.8rem; }
-.footer-phone { color: var(--terra-light); font-size: 1rem; margin-bottom: 0.3rem; }
+.footer-right { text-align: right; font-size: 0.875rem; color: rgba(255,255,255,0.36); }
+.footer-phone { color: var(--terra-light); font-size: 0.92rem; margin-bottom: 0.22rem; }
 
 /* ── SCROLL INDICATORS ── */
 .scroll-down, .scroll-up {
